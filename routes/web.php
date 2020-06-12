@@ -14,3 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomepageController@displayHomepage');
+
+Route::get('/ourProducts', 'ProductController@displayProducts');
+
+Route::get('/ourProducts', 'FabPageController@displayFabPage');
