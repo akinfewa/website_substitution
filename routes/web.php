@@ -19,12 +19,15 @@ Route::get('/poli', 'HomepageController@displayHomepage');
 
 Route::get('/ourProducts', 'ProductController@displayProducts');
 
-Route::get('/ourProducts', 'FabPageController@displayFabPage');
+Route::get('/FabPage', 'FabPageController@displayFabPage');
+Route::post('/FabPage', 'FabPageController@receiveData');
 
 Route::get('/contact', 'PagesController@contact');
 Route::get('/conditions','PagesController@conditions');
 Route::get('/politique','PagesController@politique');
 Route::get('/welcome','PagesController@welcome');
+
+
 
 
 Route::get('/apropos','PagesController@apropos');

@@ -7,9 +7,9 @@ use DB;
 class ProductController extends Controller
 {
     public function displayProducts(){
-		$sum = DB::table('test')->get();
+		$product = DB::table('produit')->get();
 		return view('welcome', [
-			'test' => $sum[0]->texte,
+			'test' => $product[0]->nom,
 		]);
 	}
 }

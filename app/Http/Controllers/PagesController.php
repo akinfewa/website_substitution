@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use DB;
+
 class PagesController extends Controller
 {
     public function connexion()
