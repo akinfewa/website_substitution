@@ -47,7 +47,7 @@
                     <a class="nav-link" href="/boutique">Boutique</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/commande">Commande</a>
+                    <a class="nav-link" href="/commande">Panier</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/connexion">Connexion</a>
@@ -165,6 +165,9 @@
     <div class="footer-copyright text-center text-dark"> © 2020 Copyright:
         <a href="https://ecole-ingenieurs.cesi.fr/" class="text-dark">cesilyon.fr</a>
     </div>
+    <li class="nav-item active">
+        <a class="nav-link text-center text-dark" href="/Admin">Espace Administrateur</a>
+    </li>
     <!-- Copyright -->
     </br>
     </br>

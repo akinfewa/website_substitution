@@ -13,7 +13,7 @@
 
         <div class="content" align="left">
             <p>
-            <p>À l’occasion de votre visite sur le Site <a href="Index.html">www.bde.cesi.fr</a> (ci-après, le « Site »), J’ai Lu est amené à collecter et traiter des données personnelles.</p>
+            <p>À l’occasion de votre visite sur le Site <a href="Index.html">www.solidarity.bond.fr</a> (ci-après, le « Site »), J’ai Lu est amené à collecter et traiter des données personnelles.</p>
 
             <p> La présente politique de confidentialité a donc vocation à informer les Utilisateurs de la manière dont le Site traite les données personnelles. La politique de confidentialité décrit les types de Données personnelles reçues ou collectées sur le Site ; les conditions d’utilisation des Données personnelles ; les choix offerts à l’Utilisateur concernant la collecte des Données personnelles et les mesures qui sont prises pour protéger la sécurité de ces Données personnelles.</p>
 

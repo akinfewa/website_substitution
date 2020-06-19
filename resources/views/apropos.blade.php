@@ -6,7 +6,7 @@
     -->
 @section('contenu')
 
-    <img src="img/etudiant.png" class="image_etudiant" width="1919" height="550" alt="Photo Etudiant Cesi" title="Etre etudiants CESI">
+    <img src="img/etudiant.png" class="image_etudiant" width="2185" height="550" alt="Photo Etudiant Cesi" title="Etre etudiants CESI">
     <!-- Information -->
     <div class="container mt-2">
         <div class="row justify-content">

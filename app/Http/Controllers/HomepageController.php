@@ -12,4 +12,5 @@ class HomepageController extends Controller
 			//'test' => $sum[0]->texte,
 		]);
 	}
+
 }

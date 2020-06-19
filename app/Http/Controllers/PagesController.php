@@ -27,7 +27,7 @@ class PagesController extends Controller
     }
     public function inscription()
     {
-        return view('politique');
+        return view('inscription');
     }
     public function welcome()
     {
@@ -37,4 +37,13 @@ class PagesController extends Controller
     {
         return view('apropos');
     }
+    public function boutique()
+    {
+        return view('boutique');
+    }
+    public function commande()
+    {
+        return view('commande');
+    }
+
 }
