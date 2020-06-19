@@ -8,9 +8,6 @@
 			$shippingState = $orders[$i]->ShippingState;
 			$display = 'commande de '.$name.' : '.$quantity.' '.$product.'</br>';
 			switch($shippingState){
-				case -1;
-					
-					break;
 				case 0 : 
 					echo ($display.'La commande n\'a pas encore étée validée, soiuhaitez-vous la valider ? (si vous répondez non, la commande sera refusée) : <br/>');
 					break;
@@ -22,9 +19,6 @@
 					break;
 				case 3 : 
 					echo ($display.'La commande a été envoyée, le commanditaire vous notifiera lorsqu\'il aura reçu la commande <br/>');
-					break;
-				default : 
-					dump($shippingState);
 					break;
 			} if($shippingState < 3 && $shippingState >=0){ ?>
 			<form method="post">

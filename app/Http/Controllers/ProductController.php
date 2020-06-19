@@ -7,9 +7,10 @@ use DB;
 class ProductController extends Controller
 {
     public function displayProducts(){
-		$product = DB::table('produit')->get();
-		return view('welcome', [
-			'test' => $product[0]->nom,
+		$product = DB::table('product')->get();
+		return view('boutique', [
+			'product' => $product,
+			'number' => count($product),
 		]);
 	}
 }

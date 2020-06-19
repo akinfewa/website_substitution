@@ -17,16 +17,16 @@ Route::get('/', 'HomepageController@displayHomepage');
 
 Route::get('/poli', 'HomepageController@displayHomepage');
 
-Route::get('/ourProducts', 'ProductController@displayProducts');
+Route::get('/boutique','ProductController@displayProducts');
 
 Route::get('/FabPage', 'FabPageController@displayFabPage');
 Route::post('/FabPage', 'FabPageController@receiveData');
+
 Route::get('/inscription', 'HomepageController@inscription');
 Route::get('/contact', 'PagesController@contact');
 Route::get('/conditions','PagesController@conditions');
 Route::get('/politique','PagesController@politique');
 Route::get('/welcome','PagesController@welcome');
-Route::get('/boutique','PagesController@boutique');
 Route::get('/inscription','PagesController@inscription');
 Route::get('/connexion','PagesController@connexion');
 Route::get('/commande','PagesController@commande');

@@ -13,14 +13,14 @@
     <div class="container">
         <div class="row justify-content">
 
-
+			<?php for($i=0;$i<$number;$i++){ ?>
             <!-- Information -->
                 <div class="col-md-7 col-9 mb-6">
                     <div class="card">
-                        <img class="card-img-top border-bottom-1" src="img/visires2.1.jpg" alt="Card image cap">
+                        <img class="card-img-top border-bottom-1" src=" <?php echo($product[$i]->picture); ?>" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">Nom </h5>
-                            <p class="card-text">Description</p>
+                            <h5 class="card-title"><?php echo($product[$i]->Name) ?> </h5>
+                            <p class="card-text"><?php echo($product[$i]->Description) ?> </p>
                         </div>
                         <!-- add button -->
 
@@ -32,7 +32,8 @@
                             </form>
 
                     </div>
-                </div>
+                </div><?php
+			} ?>
         </div>
     </div>
     <br>
