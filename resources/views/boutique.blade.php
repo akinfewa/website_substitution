@@ -24,10 +24,12 @@
                         </div>
                         <!-- add button -->
 
-                            <form class="card-footer"  action="/connexion" method="GET">
+                            <form class="card-footer"  method="POST">
+								{{csrf_field()}}
                                 <small class="text-muted">
-                                    <button type="submit" class="btn btn-outline-primary form-control">ajouter
-                                        au panier<i class="ml-1 fas fa-cart-arrow-down"></i></button>
+									<input type="hidden" name="ID" value=" <?php echo($product[$i]->ID) ?> ">
+									<input type="number" name="Quantity" value="0" min="0" max="100">
+                                    <button type="submit" class="btn btn-outline-primary form-control">commander<i class="ml-1 fas fa-cart-arrow-down"></i></button>
                                 </small>
                             </form>
 

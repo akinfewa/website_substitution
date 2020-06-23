@@ -13,4 +13,11 @@ class ProductController extends Controller
 			'number' => count($product),
 		]);
 	}
+	
+	public function orderManagement(){
+		DB::table('orders')->insert(
+			['ID_product' => request('ID'), 'ID_USERS' => 1, 'Quantity' => request('Quantity'), 'ShippingState' => 0]
+		);
+        return view('welcome');
+	}
 }

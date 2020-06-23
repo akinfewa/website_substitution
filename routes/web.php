@@ -18,6 +18,7 @@ Route::get('/', 'HomepageController@displayHomepage');
 Route::get('/poli', 'HomepageController@displayHomepage');
 
 Route::get('/boutique','ProductController@displayProducts');
+Route::post('/boutique','ProductController@orderManagement');
 
 Route::get('/FabPage', 'FabPageController@displayFabPage');
 Route::post('/FabPage', 'FabPageController@receiveData');
