@@ -9,36 +9,37 @@
     -->
 
     <div id="register" class="animate form">
-        <form  method="POST" autocomplete="on" class="border mb-5 mt-5 mr-auto ml-auto col-4">
+        <form method="POST" action="/register" autocomplete="on" class="border mb-5 mt-5 mr-auto ml-auto col-4">
+          {{ csrf_field() }}
 
         <!-- title -->
             <h4 class="mt-3">Veuillez remplir ce formulaire pour votre inscription</h4>
 
             <!-- Information -->
             <div class="form-group">
-                <label>Nom : </label>
-                <input name="lastName" required="required" type="text" value="" class="form-control"/>
+                <label for "name">Nom : </label>
+                <input name="name" required="required" placeholder="Dujardin" type="text" value="" class="form-control"/>
             </div>
 
             <div class="form-group">
-                <label>Prénom : </label>
-                <input name="firstName" required="required" type="text" value="" class="form-control"/>
+                <label for "first_name">Prénom : </label>
+                <input name="first_name" required="required" placeholder="Jean" type="text" value="" class="form-control"/>
             </div>
             <div class="form-group">
-                <label>Entreprise : </label>
-                <input name="Entreprise" required="required" type="text" value="" class="form-control"/>
+                <label for "company">Entreprise : </label>
+                <input name="company" required="required" type="text" placeholder="Corporation" value="" class="form-control"/>
             </div>
             <div class="form-group">
-                <label>Adresse Mail : </label>
+                <label for"email">Adresse Mail : </label>
                 <input name="email" required="required" type="email" placeholder="exemple@gmail.com" value="" class="form-control"/>
             </div>
             <div class="form-group">
-                <label>Mot de passe : </label>
+                <label for"password">Mot de passe : </label>
                 <input name="password" required="required" type="password" placeholder="Mot de passe" class="form-control"/>
             </div>
             <div class="form-group">
-                <label>Confirmation Mot de passe : </label>
-                <input  name="password_confirmation" required="required" type="password" placeholder="Mot de passe (Confirmation)" class="form-control"/>
+                <label for="password_confirmation">Confirmation du mot de passe</label>
+                <input name="password_confirmation" required="required" type="password" id="password_confirmation" placeholder="Mot de passe (Confirmation)" class="form-control"/>
             </div>
             <!-- termes -->
             <div class="custom-control custom-checkbox">

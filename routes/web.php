@@ -28,12 +28,15 @@ Route::get('/contact', 'PagesController@contact');
 Route::get('/conditions','PagesController@conditions');
 Route::get('/politique','PagesController@politique');
 Route::get('/welcome','PagesController@welcome');
-Route::get('/inscription','PagesController@inscription');
-Route::get('/connexion','PagesController@connexion');
 Route::get('/commande','PagesController@commande');
 Route::get('/Admin','administrateurController@admin');
 
+Route::get('/register', 'RegistrationController@create');
+Route::post('register', 'RegistrationController@store');
 
+Route::get('/login', 'SessionsController@create');
+Route::post('/login', 'SessionsController@store');
+Route::get('/logout', 'SessionsController@destroy');
 
 Route::get('/apropos','PagesController@apropos');
 

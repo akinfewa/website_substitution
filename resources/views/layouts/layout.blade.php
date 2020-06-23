@@ -40,6 +40,7 @@
         <div class="col-sm text-center">
             <ul class="navbar-nav mr-auto">
 
+                @if( auth()->check() )
                 <li class="nav-item active">
                     <a class="nav-link" href="/">Accueil</a>
                 </li>
@@ -50,10 +51,29 @@
                     <a class="nav-link" href="/commande">Panier</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/connexion">Connexion</a>
+                    <a class="nav-link" href="/apropos">A propos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/inscription">Inscription</a>
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Déconnexion</a>
+                </li>
+                @else
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/boutique">Boutique</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/commande">Panier</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Connexion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">Inscription</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/apropos">A propos</a>
@@ -61,6 +81,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/contact">Contact</a>
                 </li>
+            @endif
             </ul>
         </div>
         <form class="form-inline my-2 my-lg-0">

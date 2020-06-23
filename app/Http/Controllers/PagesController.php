@@ -6,11 +6,6 @@ use DB;
 
 class PagesController extends Controller
 {
-    public function connexion()
-    {
-        return view('connexion');
-    }
-
     public function contact()
     {
         return view('contact');
@@ -24,10 +19,6 @@ class PagesController extends Controller
     public function conditions()
     {
         return view('conditions');
-    }
-    public function inscription()
-    {
-        return view('inscription');
     }
     public function welcome()
     {
