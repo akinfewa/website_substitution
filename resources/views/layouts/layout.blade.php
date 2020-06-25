@@ -47,12 +47,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/boutique">Boutique</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/commande">Panier</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/myProfile">Profile</a>
+                    </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/apropos">A propos</a>
                 </li>
+                    <li class="nav-item">
                 <li class="nav-item">
                     <a class="nav-link" href="/contact">Contact</a>
                 </li>
@@ -65,9 +66,6 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/boutique">Boutique</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/commande">Panier</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/login">Connexion</a>

@@ -10,26 +10,35 @@
 
 
     <h4 class="categorie p-5 text-muted" align="center">Produits :</h4>
+
     <div class="container">
-        <div class="row justify-content">
 
 			<?php for($i=0;$i<$number;$i++){ ?>
             <!-- Information -->
-                <div class="col-md-7 col-9 mb-6">
-                    <div class="card">
-                        <img class="card-img-top border-bottom-1" src=" <?php echo($product[$i]->picture); ?>" alt="Card image cap">
+                <div>
+                    <div class="card text-center">
+                        <img class="card-img-top border-bottom-2" src=" <?php echo($product[$i]->picture); ?>" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title"><?php echo($product[$i]->Name) ?> </h5>
+                            <h4 class="card-title"><?php echo($product[$i]->Name) ?> </h4>
+                            <hr width="100%" color="black">
+                        </br>
                             <p class="card-text"><?php echo($product[$i]->Description) ?> </p>
+                            </br>
+                            <hr width="100%" color="black">
+                            </br>
+                            <p class="text-center">PROTEGEONS-NOUS !</p>
                         </div>
                         <!-- add button -->
 
                             <form class="card-footer"  method="POST">
 								{{csrf_field()}}
                                 <small class="text-muted">
+                                    <p>Veuillez à bien respecter le nombre d'article par commande pour que votre commande soit prise en charge. (50 maximum)</p>
 									<input type="hidden" name="ID" value=" <?php echo($product[$i]->ID) ?> ">
-									<input type="number" name="Quantity" value="0" min="0" max="100">
-                                    <button type="submit" class="btn btn-outline-primary form-control">commander<i class="ml-1 fas fa-cart-arrow-down"></i></button>
+									<input type="number" name="Quantity" min="0" max="50" placeholder="Quantité maximal 50" class="col-sm-8 text-center">
+                                </br>
+                                    </br>
+                                    <button type="submit" class="btn btn-outline-dark form-control">Commander</button>
                                 </small>
                             </form>
 
@@ -38,6 +47,8 @@
 			} ?>
         </div>
     </div>
+    <br>
+    <br>
     <br>
 
 @endsection

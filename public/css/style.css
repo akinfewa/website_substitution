@@ -9,4 +9,9 @@ p{
     font-size: 20px;
     font-family:"Fantasy";
 }
+h4{
+    font-size: 70px; /* Titres de 40 pixels */
+    font-family:"Fantasy";
+    color: black;
+}
 
