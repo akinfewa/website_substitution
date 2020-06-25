@@ -1,20 +1,20 @@
 @extends ('layouts.layout')
 
 @section('contenu')
-	Nom : 
-	<?php 
+	Nom :
+	<?php
 		echo($profile[0]->name);
 	?> </br>
-	Prénom : 
-	<?php 
+	Prénom :
+	<?php
 		echo($profile[0]->first_name);
 	?> </br>
-	Company : 
-	<?php 
+	Company :
+	<?php
 		echo($profile[0]->first_name);
 	?> </br>
-	email : 
-	<?php 
+	email :
+	<?php
 		echo($profile[0]->email);
 	?> </br>
 	Vos différentes commandes :</br>
@@ -34,10 +34,10 @@
 					$message = ' a été produite, elle est en attente d\'envoi';
 					break;
 				case 3 : $message = 'ERREUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUURE';
-					echo('Votre commande de '.$orders[$i]->Quantity.' '.($products[($orders[$i]->ID_Product)-1]->Name).' a été envoyée, vous pouvez cocher la case suivante pour nous informer du reçu de votre commande :'); ?> 
+					echo('Votre commande de '.$orders[$i]->Quantity.' '.($products[($orders[$i]->ID_Product)-1]->Name).' a été envoyée, vous pouvez cocher la case suivante pour nous informer du reçu de votre commande :'); ?>
 					<form method="post">
 						{{csrf_field()}}
-						<?php 
+						<?php
 						echo ('<input type="hidden" name="ID" value="'.$orders[$i]->ID.'" />');?>
 							<input type="checkbox" name="received">
 							<button type="submit"value="Submit">Envoyer</button>

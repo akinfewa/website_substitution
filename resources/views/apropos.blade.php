@@ -2,7 +2,7 @@
 <!-- Header -->
 @extends ('layouts.layout')
 <!--
-    This page provides information about the school to users
+    This Page provides information about the school to users
     -->
 @section('contenu')
 

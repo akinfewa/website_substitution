@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <!--  title of the page -->
+    <!--  title of the Page -->
     <title>Solidarity Bond</title>
 
     <!--  SEO -->

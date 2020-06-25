@@ -28,7 +28,7 @@
                             </br>
                             <p class="text-center">PROTEGEONS-NOUS !</p>
                         </div>
-                        <!-- add button -->
+                        <!-- Add button -->
 
                             <form class="card-footer"  method="POST">
 								{{csrf_field()}}
