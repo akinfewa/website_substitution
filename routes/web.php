@@ -34,6 +34,9 @@ Route::get('/Admin','administrateurController@admin');
 Route::get('/register', 'RegistrationController@create');
 Route::post('register', 'RegistrationController@store');
 
+Route::get('/myProfile', 'ProfileController@display');
+Route::post('/myProfile', 'ProfileController@received');
+
 Route::get('/login', 'SessionsController@create');
 Route::post('/login', 'SessionsController@store');
 Route::get('/logout', 'SessionsController@destroy');

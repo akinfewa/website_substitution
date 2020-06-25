@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use DB;
+use Auth;
 
 class ProductController extends Controller
 {
@@ -15,9 +16,13 @@ class ProductController extends Controller
 	}
 	
 	public function orderManagement(){
-		DB::table('orders')->insert(
-			['ID_product' => request('ID'), 'ID_USERS' => 1, 'Quantity' => request('Quantity'), 'ShippingState' => 0]
-		);
+		if(Auth::check()){
+			DB::table('orders')->insert(
+				['ID_product' => request('ID'), 'ID_USERS' => Auth::user()->id, 'Quantity' => request('Quantity'), 'ShippingState' => 0]
+			);
+		}else {
+			echo('<script>alert("Vous devez être connecté pour passer une commande")</script>');//an alert() in js
+		}
         return view('welcome');
 	}
 }
