@@ -14,7 +14,6 @@
 
 
     </br>
-<-- View -->
     <div class="row">
         <div class="col-sm-4 text-center">
             <img src="img/coronavirus.jpg" width="400" height="250">
