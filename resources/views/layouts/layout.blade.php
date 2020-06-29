@@ -66,6 +66,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/logout">Déconnexion</a>
                 </li>
+				<?php
+					if(Auth::user()->Fabman == 1){ ?>
+					<li class="nav-item">
+						<a class="nav-link" href="/FabPage">admin</a>
+					</li>
+					<?php }
+				?>
 
                 @else
 

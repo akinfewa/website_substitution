@@ -30,18 +30,21 @@
                         </div>
                         <!-- Add button -->
 
-                            <form class="card-footer"  method="POST">
-								{{csrf_field()}}
-                                <small class="text-muted">
-                                    <p class="general">Veuillez à bien respecter le nombre d'articles par commande pour afin qu'elle soit prise en compte. (50 maximum)</p>
-									<input type="hidden" name="ID" value=" <?php echo($product[$i]->ID) ?> ">
-									<input type="number" name="Quantity" min="0" max="50" placeholder="Quantité maximal 50" class="col-sm-8 text-center">
-                                </br>
-                                    </br>
-                                    <button type="submit" class="btn btn-outline-dark form-control">Commander</button>
-                                </small>
-                            </form>
-
+							<?php if($product[$i]->ProdCapacity>0){ ?>
+								<form class="card-footer"  method="POST">
+									{{csrf_field()}}
+									<small class="text-muted">
+										<p class="general">Le maximum est egal a : <?php echo($product[$i]->ProdCapacity) ?></p>
+										<input type="hidden" name="ID" value=" <?php echo($product[$i]->ID) ?> ">
+										<input type="number" name="Quantity" min="1" max="<?php echo($product[$i]->ProdCapacity) ?>" value="0" class="col-sm-8 text-center">
+									</br>
+										</br>
+										<button type="submit" class="btn btn-outline-dark form-control">Commander</button>
+									</small>
+								</form>
+							<?php }else { ?>
+								<p class="general"> Nous nous excusons, mais nous sommes actuellement dans l'incapacite de d'assurer la production de <?php echo($product[$i]->Name) ?></p>
+							<?php } ?>
                     </div>
                 </div><?php
 			} ?>

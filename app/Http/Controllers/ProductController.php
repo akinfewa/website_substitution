@@ -20,6 +20,8 @@ class ProductController extends Controller
 			DB::table('orders')->insert(
 				['ID_product' => request('ID'), 'ID_USERS' => Auth::user()->id, 'Quantity' => request('Quantity'), 'ShippingState' => 0]
 			);
+			$quantity = DB::table('product')->where('ID', request('ID'))->get('ProdCapacity');
+			DB::table('product')->where('ID', request('ID'))->update(['ProdCapacity' => (($quantity[0]->ProdCapacity)-request('Quantity'))]);
 		}else {
 			echo('<script>alert("Vous devez être connecté pour passer une commande")</script>');//an alert() in js
 		}
