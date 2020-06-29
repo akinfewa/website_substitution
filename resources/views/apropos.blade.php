@@ -25,7 +25,7 @@
     <br/>
     <br/>
     <!-- Information video too -->
-    <div class="video-responsive text-center">
+    <div class="text-center">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/D3-tfUDRa1E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen alt="Video presnetation CESI"></iframe>
     </div>
     <br/>

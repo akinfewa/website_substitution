@@ -1,18 +1,49 @@
 /* FICHIER*/
-body{
+
+
+
+.page-footer {
+    background-color: #DCDCDC;
 }
+
+
 .taille{
     height: 30vh;
 }
 
-p{
-    color: black;
-    font-size: 20px;
-    font-family:"Fantasy";
-}
-h4{
-    font-size: 70px; /* Titres de 40 pixels */
-    font-family:"Fantasy";
-    color: black;
+
+<!-- Page profile -->
+
+/*div.encadrement{*/
+/*    padding:4px; border:4px solid #e0e0e0;width: 65%;*/
+/*}*/
+
+/*div.encadrementA{*/
+/*    padding:3px; background-color:#e0e0e0;*/
+/*}*/
+
+
+<!-- Page welcome -->
+
+div.general{
+    font-family: bold;
+    font-size:115%;
 }
 
+p.title{
+    font-family: bold;
+    font-size:175%;
+}
+
+p.blocktext {
+    margin-left: auto;
+    margin-right: auto;
+    width: 30em;
+    font-family: bold;
+    font-size:115%;
+}
+
+p.general{
+    font-family: bold;
+    font-size:115%;
+}

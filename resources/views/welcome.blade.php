@@ -16,12 +16,11 @@
     </br>
     <div class="row">
         <div class="col-sm-4 text-center">
-            <img src="img/coronavirus.jpg" width="400" height="250">
+            <img src="img/coronavirus.jpg" width=80% height=80%>
         </div>
-        <div class="col-sm-8 text-center">
+        <div class="col-sm-8 text-center general">
             <p>
             </p>
-            </br>
             </br>
                 Nous  connaissons  actuellement  une  période  particulière.
                 La  crise  mondiale  du  Covid-19  modifie significativement l’existence de la quasi-totalité
@@ -34,7 +33,6 @@
         </div>
     </div>
 
-    </br>
 
     <hr width="100%" color="black">
 
@@ -42,7 +40,7 @@
     </br>
 
     <div class="row">
-        <div class="col-sm-6 text-center">
+        <div class="col-sm-6 text-center general">
             </br>
                 Nous sommes actuellement 3 élèves de deuxième années en école d'ingénieurs spécialité informatique
             </br>
@@ -54,7 +52,7 @@
             </p>
         </div>
         <div class="text-center col-sm-6">
-            <img src="img/cesi.png" width="550" height="200">
+            <img src="img/cesi.png" width=85% height=75%>
         </div>
     </div>
 
@@ -65,49 +63,37 @@
     </br>
     </br>
 
-    <div class="row">
-        <div class="col-sm-5 text-center">
-             <img src="img/caddie.jpg" width="300" height="300">
-        </div>
-        <div class="col-sm-7 text-center">
-
+        <div>
+                <p class="title text-center">
                 <b>Comment fonctionne notre site?</b>
-                <p>
-                Le fonctionnement se passe en plusieurs étapes:
                 </p>
-            <ul>
-                <li>
-                     Inscription avec les informations personnels
-                </li>
-                <li>
-                     Connexion si l'inscription est déjà faite
-                </li>
-                <li>
-                    Connexion si l'inscription est déjà faite
-                </li>
-                <li>
-                     Direction la Boutique pour choisir le produit et la quantité desiré
-                </li>
-                <li>
-                     Suivi de la commande dans les jours à venir, vous parviendra
-                </li>
-        </ul>
+                </br>
+            <p class="blocktext">
+                Le fonctionnement du site est simple et efficace, tout se passe en quelques étapes:
+                    </br>
+                     Etape 1 - Inscription avec les informations personnels
+                    </br>
+                     Etape 2 - Connexion si l'inscription est déjà faite
+                    </br>
+                     Etape 3- Connexion si l'inscription est déjà faite
+                    </br>
+                     Etape 4 - Direction la Boutique pour choisir le produit et la quantité desiré
+                    </br>
+                     Etape 5 - Suivi de la commande dans les jours à venir, vous parviendra
+                </p>
         </div>
             </br>
         </div>
 
         </div>
-    </div>
 
 </br>
 <hr width="100%" color="black">
 </br>
 
-<div class="text-center">
+<div class="text-center general">
     <p class="text-center"><b>Vous êtes pret à l'utilisation en vous souhaitant la</b></p>
     <img src="img/bienvenue.jpg" width="700" height="250">
 </div>
-
-<hr width="100%" color="black">
     @endsection
 

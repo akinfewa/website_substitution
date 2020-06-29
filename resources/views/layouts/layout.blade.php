@@ -23,9 +23,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
-<body>
+
+
+    <!-- Body -->
+<body style="background-color:#FFFAFA;">
 <header>
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #eeee;">
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #eeee;">
     <a class="navbar-brand" href="/">
         <img src="{{asset('img/Logo1.jpg')}}" width="60" height="60" alt="Logo BDE">
     </a>
@@ -36,9 +40,11 @@
         <span class="border border-primary"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="col-sm text-center">
+    <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+        <div class="col-sm">
             <ul class="navbar-nav mr-auto">
+
+                <!-- Compare NavBar connect or no -->
 
                 @if( auth()->check() )
                 <li class="nav-item active">
@@ -48,7 +54,7 @@
                     <a class="nav-link" href="/boutique">Boutique</a>
                 </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/myProfile">Profile</a>
+                        <a class="nav-link" href="/myProfile">Profil</a>
                     </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/apropos">A propos</a>
@@ -60,7 +66,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/logout">Déconnexion</a>
                 </li>
+
                 @else
+
                 <li class="nav-item active">
                     <a class="nav-link" href="/">Accueil</a>
                 </li>
@@ -81,22 +89,24 @@
                 </li>
             @endif
             </ul>
-        </div>
-        <form class="form-inline my-2 my-lg-0">
+{{--        </div>--}}
+{{--        <!-- Recherche -->--}}
+{{--        <form class="form-inline my-2 my-lg-0">--}}
 
-            <input class="form-control mr-sm-2" type="search" placeholder="" aria-label="">
+{{--            <input class="form-control mr-sm-2" type="search" placeholder="" aria-label="">--}}
 
-            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Chercher</button>
+{{--            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Chercher</button>--}}
 
-        </form>
-    </div>
+{{--        </form>--}}
+{{--    </div>--}}
 </nav>
 </header>
-<!-- Footer -->
+
+    <!-- Footer -->
 
 @yield ('contenu')
 
-<footer class="page-footer font-small bg-light text-white">
+<footer class="page-footer text-white">
     <br>
 
     <!-- Footer Links -->
@@ -160,6 +170,7 @@
 
 
             </div>
+
             <!-- Grid column -->
 
             <hr class="clearfix w-100 d-md-none">

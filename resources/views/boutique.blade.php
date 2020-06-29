@@ -9,7 +9,7 @@
 @section('contenu')
 
 
-    <h4 class="categorie p-5 text-muted" align="center">Produits :</h4>
+    <h4 class="text-black-50 p-5 text-muted" align="center">Produits :</h4>
 
     <div class="container">
 
@@ -33,7 +33,7 @@
                             <form class="card-footer"  method="POST">
 								{{csrf_field()}}
                                 <small class="text-muted">
-                                    <p>Veuillez à bien respecter le nombre d'article par commande pour que votre commande soit prise en charge. (50 maximum)</p>
+                                    <p class="general">Veuillez à bien respecter le nombre d'articles par commande pour afin qu'elle soit prise en compte. (50 maximum)</p>
 									<input type="hidden" name="ID" value=" <?php echo($product[$i]->ID) ?> ">
 									<input type="number" name="Quantity" min="0" max="50" placeholder="Quantité maximal 50" class="col-sm-8 text-center">
                                 </br>
