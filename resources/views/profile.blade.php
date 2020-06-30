@@ -9,38 +9,45 @@
             </br>
             <em><B>Vos renseignements et commandes</B></em>
             </br>
-            <hr width="100%" color="black">
-            </br>
-            Votre nom est <em>
+			<form method="post">
             <?php
-            echo($profile[0]->name);
-            ?></em>
-            </br>
-            </br>
-            <hr width="100%" color="black">
-            </br>
-            Votre prénom est <em>
-            <?php
-                echo($profile[0]->first_name);
-            ?></em>
-            </br>
-            </br>
-            <hr width="100%" color="black">
-            </br>
-            Votre entreprise est <em>
-            <?php
-                echo($profile[0]->company);
-            ?></em>
-            </br>
-            </br>
-            <hr width="100%" color="black">
-            </br>
-            Votre email est <em>
-            <?php
-                echo($profile[0]->email);
-            ?></em>
-            </br>
-            </br>
+            echo ('<input type="hidden" name="ID" value="'.$profile[0]->ID.'" />');
+            echo ('<input type="hidden" name="whichOne" value="profile" />'); ?>
+			{{csrf_field()}}
+				<hr width="100%" color="black">
+				</br>
+				Votre nom est <em>
+				<?php
+					echo('<input type="text" name="name" value="'.$profile[0]->name.'"/>');
+				?> 
+				</em>
+				</br>
+				</br>
+				<hr width="100%" color="black">
+				</br>
+				Votre prénom est <em>
+				<?php
+					echo('<input type="text" name="name" value="'.$profile[0]->first_name.'"/>');
+				?></em>
+				</br>
+				</br>
+				<hr width="100%" color="black">
+				</br>
+				Votre entreprise est <em>
+				<?php
+					echo('<input type="text" name="name" value="'.$profile[0]->company.'"/>');
+				?> </em>
+				</br>
+				</br>
+				<hr width="100%" color="black">
+				</br>
+				Votre email est <em>
+				<?php
+					echo($profile[0]->email);
+				?></em>
+				</br>
+			</form>
+			</br>
             <hr width="100%" color="black">
             </br>
             Vos différentes commandes :
@@ -69,7 +76,8 @@
         <form method="post">
             {{csrf_field()}}
             <?php
-            echo ('<input type="hidden" name="ID" value="'.$orders[$i]->ID.'" />');?>
+            echo ('<input type="hidden" name="ID" value="'.$orders[$i]->ID.'" />');
+            echo ('<input type="hidden" name="whichOne" value="order" />'); ?>
             <input type="checkbox" name="received">
             <button type="submit"value="Submit">Envoyer</button>
         </form>
