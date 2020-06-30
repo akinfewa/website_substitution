@@ -41,6 +41,8 @@ Route::get('/login', 'SessionsController@create');
 Route::post('/login', 'SessionsController@store');
 Route::get('/logout', 'SessionsController@destroy');
 
+Route::get('sendbasicemail','MailController@basic_email');
+
 Route::get('/apropos','PagesController@apropos');
 
 //Route::get('/accueil','PagesController@accueil');
