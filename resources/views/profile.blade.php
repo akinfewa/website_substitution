@@ -11,7 +11,7 @@
             </br>
 			<form method="post">
             <?php
-            echo ('<input type="hidden" name="ID" value="'.$profile[0]->ID.'" />');
+            echo ('<input type="hidden" name="ID" value="'.$profile[0]->id.'" />');
             echo ('<input type="hidden" name="whichOne" value="profile" />'); ?>
 			{{csrf_field()}}
 				<hr width="100%" color="black">
