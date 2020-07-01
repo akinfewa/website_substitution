@@ -1,9 +1,14 @@
+<!-- view profile reset mdp/mail-->
+
+<!-- Header -->
 @extends ('layouts.layout')
 
 @section('contenu')
+
 <br/>
 <br/>
 <br/>
+
     <div class="text-center" style="padding:5px; width:75%; margin:auto; border:8px solid #padding:5px; width:75%; margin:auto; border:8px solid #e0e0e0; background-color:#e0e0e0; -moz-border-radius:20px; -khtml-border-radius:20px; -webkit-border-radius:20px; border-radius:20px;; background-color:#padding:5px; width:75%; margin:auto; border:8px solid black; background-color:#e0e0e0; -moz-border-radius:20px; -khtml-border-radius:20px; -webkit-border-radius:20px; border-radius:20px;; -moz-border-radius:20px; -khtml-border-radius:20px; -webkit-border-radius:20px; border-radius:20px;">
         </br>
         </br>
