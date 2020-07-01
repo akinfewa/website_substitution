@@ -5,12 +5,13 @@
         <br/>
         <br/>
         <p class="titre"><b>Bienvenue à vous, Monsieur Administrateur !</b></p>
+        <p class="generalEcriturev2">Vous pourrais voir ci-dessous les différentes commandes et émettre le nombre disponible de visières visible par les partenaires</p>
 {{--        <img src="img/admin.png" height="20%" width="20%">--}}
 {{--        <img src="img/admin2.jpg" height="35%" width="35%">--}}
         <br/>
         <hr width="80%" color="blue">
         <br/>
-        <p class="general">Voici les différentes commandes faites par les partenaires :</p>
+        <p class="general">Les differentes commandes des partenaires</p>
         <br/>
         <hr width="50%" color="blue">
         <br/>
@@ -26,7 +27,7 @@
 			$display = 'Une commande de '.$name.' : '.$quantity.' '.$product.'</br>';
 			switch($shippingState){
 				case 0 :
-					echo ($display.'La commande n\'a pas encore été validée, souhaitez-vous la valider ? (si vous répondez non, la commande sera refusée) : <br/>');
+					echo ($display.'La commande n\'a pas encore été validée, souhaitez-vous confirmer ? (si vous répondez non, la commande sera refusée) : <br/>');
 					break;
 				case 1 :
 					echo ($display.'La commande est en construction, souhaitez-vous affirmer que la commande a été construite ? (si vous répondez non, la commande ne sera plus validée) : <br/>');
@@ -74,12 +75,9 @@
         </div>
         <br/>
         <br/>
-        <p class="title text-center">Pour emettre le taux de production : </p>
+        <p class="general text-center">Pour émettre le nombre de production possible : </p>
         <br/>
-        <div class="trait2"></div>
-        <br/>
-        <br/>
-        <br/>
+        <hr width="50%" color="blue">
         <br/>
 		<p class="text-center general">
             Voici les differentes capacités de productions que vous avez signifié pour les différents produits, il est important de les tenir à jour régulièrement
@@ -92,6 +90,7 @@
 				<?php
 				echo ('<input type="hidden" name="whichOne" value="products" />');?>
 				<div>
+                <br/>
 				<?php
 				echo ('<input type="number" name="'.$products[$i]->ID.'" value="'.$products[$i]->ProdCapacity.'" />');?>
 				</div>

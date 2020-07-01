@@ -7,7 +7,8 @@
 {{--    <div class="encadrement">--}}
         <div class="text-center" style="padding:5px; width:75%; margin:auto; border:8px solid #padding:5px; width:75%; margin:auto; border:8px solid #e0e0e0; background-color:#e0e0e0; -moz-border-radius:20px; -khtml-border-radius:20px; -webkit-border-radius:20px; border-radius:20px;; background-color:#padding:5px; width:75%; margin:auto; border:8px solid black; background-color:#e0e0e0; -moz-border-radius:20px; -khtml-border-radius:20px; -webkit-border-radius:20px; border-radius:20px;; -moz-border-radius:20px; -khtml-border-radius:20px; -webkit-border-radius:20px; border-radius:20px;">
             </br>
-            <em><B>Vos renseignements et commandes</B></em>
+            </br>
+            <p class="general"><em><B>Vos renseignements et commandes</B></em></p>
             </br>
 			<form method="post">
             <?php
@@ -19,7 +20,7 @@
 				Votre nom est <em>
 				<?php
 					echo('<input type="text" name="name" value="'.$profile[0]->name.'"/>');
-				?> 
+				?>
 				</em>
 				</br>
 				</br>
