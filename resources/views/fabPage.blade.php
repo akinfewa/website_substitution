@@ -66,19 +66,24 @@
         </form>
     <div class="trait">
     </div>
-
-    <br/>
-
+    </br>
         <?php
 			}
 		}?>
-
-
+        <div class="trait">
+        </div>
         <br/>
-
+        <br/>
+        <p class="title text-center">Pour emettre le taux de production : </p>
+        <br/>
+        <div class="trait2"></div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
 		<p class="text-center general">
-            Voici les differentes capacite de production que vous avez signifier pour les différents produits, il est important de les tenir à jour régulièrement
-            puisqu'elles permettent de limiter ou non les différentes commandes :
+            Voici les differentes capacités de productions que vous avez signifié pour les différents produits, il est important de les tenir à jour régulièrement
+            puisqu'elles permettent de limiter ou non, les différentes commandes :
         </p>
 		<form method="post" class="text-center">
 			{{csrf_field()}}
@@ -95,6 +100,9 @@
             <?php
 			} ?>
 		</form>
+        <br/>
+        <br/>
+        <br/>
         <br/>
     </div>
     <div class="trait">
