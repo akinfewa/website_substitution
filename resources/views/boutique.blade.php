@@ -8,7 +8,7 @@
 
 @section('contenu')
 
-
+<div class="back">
     <h4 class="text-black-50 p-5 text-muted" align="center">Produits :</h4>
 
     <div class="container">
@@ -49,10 +49,10 @@
                 </div><?php
 			} ?>
         </div>
-    </div>
     <br>
     <br>
     <br>
+</div>
 
 @endsection
 

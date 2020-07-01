@@ -17,7 +17,7 @@
 
 
 
-            <p>BDE CESI LYON,</p>
+            <p>SOLIDARITY BOND, PAR DES ETUDIANTS DU CESI LYON,</p>
 
             <p>19 avenue Guy de Collongue, Ecully </p>
 
@@ -25,9 +25,9 @@
 
             <p>sous le numéro SIRET 123456789, </p>
 
-            <p>représentée par M. Jean DUPONT </p>
+            <p>représentée par M. Baptiste NAEYER </p>
 
-            <p>en qualité de gérant, </p>
+            <p>en qualité de gérant du stock, </p>
 
             <p>dûment habilité aux fins des présentes. </p>
 

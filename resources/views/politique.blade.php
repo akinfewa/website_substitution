@@ -13,7 +13,7 @@
 
         <div class="content" align="left">
             <p>
-            <p>À l’occasion de votre visite sur le Site <a href="Index.html">www.solidarity.bond.fr</a> (ci-après, le « Site »), J’ai Lu est amené à collecter et traiter des données personnelles.</p>
+            <p>À l’occasion de votre visite sur le Site <a href="Index.html">https://visieres.zaroax.eu/</a> (ci-après, le « Site »), J’ai Lu est amené à collecter et traiter des données personnelles.</p>
 
             <p> La présente politique de confidentialité a donc vocation à informer les Utilisateurs de la manière dont le Site traite les données personnelles. La politique de confidentialité décrit les types de Données personnelles reçues ou collectées sur le Site ; les conditions d’utilisation des Données personnelles ; les choix offerts à l’Utilisateur concernant la collecte des Données personnelles et les mesures qui sont prises pour protéger la sécurité de ces Données personnelles.</p>
 
@@ -30,7 +30,7 @@
             <p> Le responsable du traitement des données personnelles dans le cadre la consultation et de l’utilisation du Site est la société</p>
             <p>CESI Ecole d'Ingénieurs : 582 039 673.</p>
             <p> Adresse : 19 Avenue Guy de Collongue, Ecully</p>
-            <p> Courriel : contact@cesi.fr</p>
+            <p> Courriel : bdenaeyer@cesi.fr</p>
 
             <p><b>III. Base légale du traitement</b></p>
 
@@ -130,7 +130,7 @@
 
             <p>En cas de litige portant sur le traitement de ses Données Personnelles dans le cadre de la consultation du Site, les Utilisateurs et le responsable du traitement s’engagent à rechercher préalablement et de bonne foi une solution amiable. A défaut, l’Utilisateur peut introduire une réclamation auprès de la Commission Nationale de l’Informatique et des Libertés (CNIL) ou saisir les tribunaux compétents.</p>
 
-            <p>Cette politique de confidentialité a été mise à jour le 12/11/2019.</p>
+            <p>Cette politique de confidentialité a été mise à jour le 01/07/2020.</p>
         </div>
 
 

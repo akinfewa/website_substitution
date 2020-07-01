@@ -4,24 +4,26 @@
 
 @section('contenu')
 
-    </br>
-    </br>
+
 
 {{--    <div>--}}
 {{--            <img src="img/projet.png" width="500" height="250" class="col-lg-4">--}}
 {{--             <p class="text-left">Texte centré</p>--}}
 {{--    </div>--}}
 
-
-    </br>
     <div class="row">
         <div class="col-sm-4 text-center">
+            </br>
+            </br>
             <img src="img/coronavirus.jpg" width=80% height=80%>
         </div>
         <div class="col-sm-8 text-center general">
             <p>
-            </p>
-            </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
                 Nous  connaissons  actuellement  une  période  particulière.
                 La  crise  mondiale  du  Covid-19  modifie significativement l’existence de la quasi-totalité
                 des populations.
@@ -32,7 +34,6 @@
             </p>
         </div>
     </div>
-
 
     <hr width="100%" color="black">
 
@@ -82,18 +83,15 @@
                      Etape 5 - Suivi de la commande dans les jours à venir, vous parviendra
                 </p>
         </div>
-            </br>
-        </div>
 
-        </div>
+        </br>
+        <hr width="100%" color="black">
+        </br>
 
-</br>
-<hr width="100%" color="black">
-</br>
+    <div class="text-center general">
+        <p class="text-center"><b>Vous êtes pret à l'utilisation en vous souhaitant la</b></p>
+        <img src="img/bienvenue.jpg" width=65% height=100%>
+    </div>
 
-<div class="text-center general">
-    <p class="text-center"><b>Vous êtes pret à l'utilisation en vous souhaitant la</b></p>
-    <img src="img/bienvenue.jpg" width="700" height="250">
-</div>
     @endsection
 

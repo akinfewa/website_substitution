@@ -50,6 +50,13 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="/">Accueil</a>
                 </li>
+                    <?php
+                    if(Auth::user()->Fabman == 1){ ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/FabPage">Admin</a>
+                    </li>
+                    <?php }
+                    ?>
                 <li class="nav-item">
                     <a class="nav-link" href="/boutique">Boutique</a>
                 </li>
@@ -66,13 +73,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/logout">Déconnexion</a>
                 </li>
-				<?php
-					if(Auth::user()->Fabman == 1){ ?>
-					<li class="nav-item">
-						<a class="nav-link" href="/FabPage">admin</a>
-					</li>
-					<?php }
-				?>
 
                 @else
 
@@ -106,8 +106,8 @@
 
 {{--        </form>--}}
 {{--    </div>--}}
-</nav>
-</header>
+        </nav>
+        </header>
 
     <!-- Footer -->
 
@@ -202,10 +202,6 @@
     <div class="footer-copyright text-center text-dark"> © 2020 Copyright:
         <a href="https://ecole-ingenieurs.cesi.fr/" class="text-dark">cesilyon.fr</a>
     </div>
-    <li class="nav-item active">
-        <a class="nav-link text-center text-dark" href="/Admin">Espace Administrateur</a>
-    </li>
-    <!-- Copyright -->
     </br>
     </br>
 </footer>
