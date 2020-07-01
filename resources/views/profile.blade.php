@@ -47,6 +47,7 @@
 				?></em>
 				</br>
 			</form>
+			<a href="/profileModifications">Changer votre adresse mail ou mot de passe</a>
 			</br>
             <hr width="100%" color="black">
             </br>

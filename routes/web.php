@@ -36,6 +36,8 @@ Route::post('register', 'RegistrationController@store');
 
 Route::get('/myProfile', 'ProfileController@display');
 Route::post('/myProfile', 'ProfileController@received');
+Route::get('/profileModifications', 'ProfileController@modifications');
+Route::post('/profileModifications', 'ProfileController@modifying');
 
 Route::get('/login', 'SessionsController@create');
 Route::post('/login', 'SessionsController@store');

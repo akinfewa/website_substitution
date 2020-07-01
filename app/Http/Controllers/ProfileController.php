@@ -32,4 +32,31 @@ class ProfileController extends Controller{
 			display();
 		}
 	}
+	
+	public function modifications(){
+		if(Auth::check()){
+			return view('profileModifications');
+		}else {
+			return view('welcome');
+		}
+	}
+	
+	public function modifying(){
+        if (auth()->attempt(request(['email', 'password'])) == true) {
+			if(request('hidden') == "password"){
+				DB::table('users')->where('id', Auth::user()->id)->update(['password' => bcrypt(request(['newPassword'][0]))]);
+			}else {
+				DB::table('users')->where('id', Auth::user()->id)->update(['email' => request(['newEMail'][0])]);
+			}
+			echo('<script>alert("Votre modification a bien été prise en compte")</script>');//an alert() in js
+			return view('welcome');
+		}else {
+			echo('<script>alert("Votre email ou mot de passe est incorrect")</script>');//an alert() in js
+			if(Auth::check()){
+				return view('profileModifications');
+			}else {
+				return view('welcome');
+			}
+		}
+	}
 }
