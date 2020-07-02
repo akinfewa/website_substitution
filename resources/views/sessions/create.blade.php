@@ -13,28 +13,37 @@
         <br>
         <br>
         <!-- title -->
-        <h5 id="connection" align="center">Connexion</h5>
+        <h5 id="connection" align="center" class="titre">Connexion</h5>
         <form method="POST" action="/login" autocomplete="on" class="border mb-5 mt-5 mr-auto ml-auto col-4">
           {{ csrf_field() }}
         <!-- Information -->
             <div class="form-group mt-3">
+                <br>
+                <br>
+                <br>
                 <label for="email" class="uname" data-icon="u"> Adresse mail : </label>
                 <input id="email" name="email" class="form-control" required="required" value="" type="email"
                        placeholder="cesiLyon@viacesi.fr"/>
             </div>
+              <br>
             <div class="form-group">
                 <label for="password" class="youpasswd" data-icon="p"> Mot de passe : </label>
                 <input id="password" name="password" class="form-control" required="required" type="password"
                        placeholder="CesiMDP123"/>
             </div>
+              <br>
         <!-- submit button -->
             <div class="text-center">
-                <button type="submit" class="btn btn-outline-primary mt-2 text " id="btn-sumbit">Se connecter</button>
+                <button type="submit" class="btn btn-outline-secondary mt-2 text " id="btn-sumbit">Se connecter</button>
             </div>
             <!-- Refresh password -->
             <p class="change_link text-center mb-0 mt-3">
-                <a href="#toregister" class="to_register mr-2"> Mot de passe oublié ?</a><a href="/register" class="to_register ml-2">Pas encore inscrit ?</a>
+                <a href="#toregister" class="to_register text-secondary mr-2"> Mot de passe oublié ?</a>
+                <a href="/register" class="to_register text-secondary ml-2">Pas encore inscrit ?</a>
             </p>
+              <br>
+              <br>
+              <br>
         </form>
     </div>
     <br>
