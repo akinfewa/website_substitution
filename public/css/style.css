@@ -11,11 +11,27 @@
     height: 30vh;
 }
 
-.notif{
+@media (min-width: 990px) {
+    .notification_rouge {
         position: absolute;
         top: 50%;
-        right: -0.8%;
+        right: 0.7%;
 
+    }
+}
+
+@media (max-width: 990px) {
+
+    .notification_rouge{
+       position: absolute;
+       top: 57%;
+       right: 0.4%;
+    }
+    .notifications_cloche{
+        position: absolute;
+        top: 50%;
+        right: 0.5%;
+    }
 }
 
 #connection{

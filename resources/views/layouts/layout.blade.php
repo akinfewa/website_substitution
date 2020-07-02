@@ -100,10 +100,11 @@
         <!-- Notification -->
             </ul>
         </div>
-    </div>
                     <form class="form-inline" >
-                        <button type="button" style="margin-right: 25px" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#modal"><i class="far fa-bell" ></i></button>
-                        <div class="notif">
+                        <div class="notifications_cloche">
+                            <button type="button" style="margin-right: 25px" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#modal"><i class="far fa-bell" ></i></button>
+                        </div>
+                        <div class="notification_rouge">
                             <img src="img/red_dot.png" width=25% height=25% alt="Signification de notif">
                         </div>
                         <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -123,6 +124,8 @@
                             </div>
                         </div>
                     </form>
+        </div>
+    </div>
     </nav>
 </header>
 
