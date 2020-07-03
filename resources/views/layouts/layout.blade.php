@@ -34,32 +34,9 @@
     <a class="navbar-brand" href="/">
         <img src="{{asset('img/Logo1.jpg')}}" width="60" height="60" alt="Logo BDE">
     </a>
-    <a class="navbar-brand" href="/">Solidarity Bond</a>
-        <form class="form-inline" >
-            <div class="notifications_cloche">
-                <button type="button" style="margin-right: 25px" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#modal"><i class="far fa-bell" ></i></button>
-            </div>
-            <div class="notification_rouge">
-                <img src="img/red_dot.png" width=25% height=25% alt="Signification de notif">
-            </div>
-            <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Centre de notification</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
-                        </div>
-                        <div class="modal-body">
-                            <p>ICI THOMAS</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand ac" href="/">Solidarity Bond</a>
+
+    <button class="navbar-toggler tc" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         <span class="border border-primary"></span>
     </button>
@@ -125,6 +102,30 @@
         </div>
         </div>
     </div>
+        <form class="form-inline" >
+                <div class="notifications_cloche">
+                    <button type="button" style="margin-right: 25px" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#modal"><i class="far fa-bell" ></i></button>
+                </div>
+                <div class="notification_rouge">
+                    <img src="img/red_dot.png" width=25% height=25% alt="Signification de notif">
+                </div>
+            <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Centre de notification</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>ICI THOMAS</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
     </nav>
 </header>
 

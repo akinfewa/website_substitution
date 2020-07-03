@@ -15,7 +15,7 @@
     .notification_rouge {
         position: absolute;
         top: 55%;
-        right: -1%;
+        right: -23px;
 
     }
     .notifications_cloche{
@@ -27,23 +27,53 @@
 
 @media (max-width: 990px) {
 
-    .notification_rouge{
-       position: absolute;
-       top: 57%;
-       right: 5%;
+    .notification_rouge {
+        position: fixed;
+        top: 5%;
+        right: 42px;
     }
-    .notifications_cloche{
-        position: absolute;
-        top: 30%;
-        right: 8%;
+
+    .notifications_cloche {
+        position: fixed;
+        top: 2.75%;
+        right: 70px;
     }
+
+    /*.nom{*/
+    /*    position: center;*/
+    /*}*/
+    .ac {
+        position: fixed;
+        right: 41%;
+        top: 2.5%;
+
+    }
+
+    /*.navbar-toggler-icon {*/
+    /*    position: fixed;*/
+    /*    top: 2.5%;*/
+    /*    right: 2%;*/
+    /*}*/
+
+    /*.ac{*/
+    /*         position: fixed;*/
+    /*         top: 2.5%;*/
+    /*         right: 2%;*/
+    /*     }*/
+    /*navbar-toggler{*/
+    /*    position: fixed;*/
+    /*    top: 2.5%;*/
+    /*    right: 2%;*/
+    /*}*/
+    .tc{
+             position: fixed;
+             top: 2.5%;
+             right: 2%;
+        text-align: center;
+         }
+
 }
 
-@media (max-width: 990px) {
-    .Logo{
-        right: 8%;
-    }
-}
 
 #connection{
     font-family: bold;
