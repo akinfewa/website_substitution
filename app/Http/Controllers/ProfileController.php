@@ -8,6 +8,24 @@ use Auth;
 class ProfileController extends Controller{
 
 	public function display(){
+		if(isset($_GET['a']) && $_GET['a']>=1){
+			$allNotifications = DB::table('notifications')->get();
+			$allNotificationsNumber = count($allNotifications);
+			if($_GET['a']<=$allNotificationsNumber){
+				if($allNotifications[$_GET['a']-1]->ID_USERS == Auth::user()->id){
+					DB::table('notifications')->where('ID', $_GET['a'])->update(['seen' => 1]);
+					$notifications = DB::table('notifications')->where('ID_USERS', Auth::user()->id)->get();
+					session(['notifications' => $notifications]);
+					session(['notifications_count' => count($notifications)]);
+					$notifications = DB::table('notifications')->where('ID_USERS', Auth::user()->id)->where('seen', 0)->get();
+					$unseen = false;
+					if(count($notifications)>0){
+						$unseen = true;
+					}
+					session(['unseen' => $unseen]);
+				}
+			}
+		}
 		if(Auth::check()){
 			$profile = DB::table('users')->where('ID', Auth::user()->id)->get();
 			$orders = DB::table('orders')->where('ID_USERS', Auth::user()->id)->get();

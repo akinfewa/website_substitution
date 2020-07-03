@@ -21,7 +21,19 @@ class ProductController extends Controller
 				['ID_product' => request('ID'), 'ID_USERS' => Auth::user()->id, 'Quantity' => request('Quantity'), 'ShippingState' => 0]
 			);
 			$quantity = DB::table('product')->where('ID', request('ID'))->get('ProdCapacity');
+			$product = DB::table('product')->where('ID', request('ID'))->get('Name');
 			DB::table('product')->where('ID', request('ID'))->update(['ProdCapacity' => (($quantity[0]->ProdCapacity)-request('Quantity'))]);
+			$users = DB::table('users')->get();
+			$message = ('L\'utilisateur '.Auth::user()->name.' '.Auth::user()->first_name.' a passer une commande de '.request('Quantity').' '.$product[0]);
+			for($i = 0; $i< count($users);$i++){
+				if($users[$i]->Fabman == 1){
+					DB::table('notifications')->insert([
+						'ID_USERS' => $users[$i]->id,
+						'text' => $message,
+						'seen' => 0
+					]);
+				}
+			}
 		}else {
 			echo('<script>alert("Vous devez être connecté pour passer une commande")</script>');//an alert() in js
 		}

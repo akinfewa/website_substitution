@@ -1,3 +1,6 @@
+<?php
+//use DB;
+?>
 <!DOCTYPE html>
 
 <html>
@@ -102,12 +105,19 @@
         </div>
         </div>
         <div class="notifications" >
+			<?php
+				if(Auth::check()){ ?>
             <div class="notifications_cloche">
                 <button type="button" style="margin-right: 25px" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#modal"><i class="far fa-bell" ></i></button>
             </div>
-            <div class="notification_rouge">
-                <img src="img/red_dot.png" width=25% height=25% alt="Signification de notif">
-            </div>
+			<?php
+				if(session()->get('unseen') == true){ ?>
+					<div class="notification_rouge">
+						<img src="img/red_dot.png" width=25% height=25% alt="Signification de notif">
+					</div>
+		<?php	}
+			}
+			?>
             <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -116,7 +126,17 @@
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
                         </div>
                         <div class="modal-body">
-                            <p>ICI THOMAS</p>
+							<?php
+								for($i=0; $i<session()->get('notifications_count'); $i++){
+									if(session()->get('notifications')[$i]->seen == 0){
+										echo('<B>');
+									}
+									echo('<a href="/myProfile?a='.session()->get('notifications')[$i]->ID.'"><p> '.session()->get('notifications')[$i]->text.' </p></a>');
+									if(session()->get('notifications')[$i]->seen == 0){
+										echo('</B>');
+									}
+								}
+							?>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>

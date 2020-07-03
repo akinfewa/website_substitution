@@ -35,10 +35,11 @@
 	<?php
 		for($i=0;$i<$number;$i++){
 			$name = $users[$orders[$i]->ID_USERS-1]->name;
+			$first_name = $users[$orders[$i]->ID_USERS-1]->first_name;
 			$product = $products[$orders[$i]->ID_Product-1]->Name;
 			$quantity = $orders[$i]->Quantity;
 			$shippingState = $orders[$i]->ShippingState;
-			$display = 'Une commande de '.$name.' : '.$quantity.' '.$product.'</br>';
+			$display = 'Une commande de '.$name.' '.$first_name.' : '.$quantity.' '.$product.'</br>';
 			switch($shippingState){
 				case 0 :
 					echo ($display.'La commande n\'a pas encore été validée, souhaitez-vous confirmer ? (si vous répondez non, la commande sera refusée) : <br/>');
@@ -63,11 +64,11 @@
             <div class="general text-center">
                     <br/>
 
-					<input type="radio" value="yes" name="nextStep">
-					<label for="yes">YES</label>
+					<input type="radio" value="yes" name="nextStep"/>
+					<label for="yes">OUI</label>
                     <br/>
-					<input type="radio" value="no" name="nextStep" checked>
-					<label for="no">NO</label>
+					<input type="radio" value="no" name="nextStep" checked/>
+					<label for="no">NON</label>
 
                     <br/>
 
