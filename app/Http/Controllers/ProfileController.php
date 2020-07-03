@@ -8,25 +8,25 @@ use Auth;
 class ProfileController extends Controller{
 
 	public function display(){
-		if(isset($_GET['a']) && $_GET['a']>=1){
-			$allNotifications = DB::table('notifications')->get();
-			$allNotificationsNumber = count($allNotifications);
-			if($_GET['a']<=$allNotificationsNumber){
-				if($allNotifications[$_GET['a']-1]->ID_USERS == Auth::user()->id){
-					DB::table('notifications')->where('ID', $_GET['a'])->update(['seen' => 1]);
-					$notifications = DB::table('notifications')->where('ID_USERS', Auth::user()->id)->get();
-					session(['notifications' => $notifications]);
-					session(['notifications_count' => count($notifications)]);
-					$notifications = DB::table('notifications')->where('ID_USERS', Auth::user()->id)->where('seen', 0)->get();
-					$unseen = false;
-					if(count($notifications)>0){
-						$unseen = true;
+		if(Auth::check()){
+			if(isset($_GET['a']) && $_GET['a']>=1){
+				$allNotifications = DB::table('notifications')->get();
+				$allNotificationsNumber = count($allNotifications);
+				if($_GET['a']<=$allNotificationsNumber){
+					if($allNotifications[$_GET['a']-1]->ID_USERS == Auth::user()->id){
+						DB::table('notifications')->where('ID', $_GET['a'])->update(['seen' => 1]);
+						$notifications = DB::table('notifications')->where('ID_USERS', Auth::user()->id)->get();
+						session(['notifications' => $notifications]);
+						session(['notifications_count' => count($notifications)]);
+						$notifications = DB::table('notifications')->where('ID_USERS', Auth::user()->id)->where('seen', 0)->get();
+						$unseen = false;
+						if(count($notifications)>0){
+							$unseen = true;
+						}
+						session(['unseen' => $unseen]);
 					}
-					session(['unseen' => $unseen]);
 				}
 			}
-		}
-		if(Auth::check()){
 			$profile = DB::table('users')->where('ID', Auth::user()->id)->get();
 			$orders = DB::table('orders')->where('ID_USERS', Auth::user()->id)->get();
 			$products = DB::table('product')->get('Name');
@@ -45,9 +45,45 @@ class ProfileController extends Controller{
 		if(request('received')=="on"){
 			DB::table('orders')->where('ID', request('ID'))->update(['ShippingState' => 4]);
 			echo('<script>alert("Nous sommes heureux d\'apprendre que vous avez reçu votre commande")</script>');//an alert() in js
-			return view('welcome');
+			if(Auth::check()){
+				$profile = DB::table('users')->where('ID', Auth::user()->id)->get();
+				$orders = DB::table('orders')->where('ID_USERS', Auth::user()->id)->get();
+				$products = DB::table('product')->get('Name');
+			return view('profile', [
+				'orders' => $orders,
+				'profile' => $profile,
+				'number' => count($orders),
+				'products' => $products
+			]);
+			}
+		}else if(request('whichOne') == 'profile') {
+			DB::table('users')->where('ID', request('ID'))->update(['name' => request('name')]);
+			DB::table('users')->where('ID', request('ID'))->update(['first_name' => request('first_name')]);
+			DB::table('users')->where('ID', request('ID'))->update(['company' => request('company')]);
+			echo('<script>alert("Les modifications que vous avez apportés à votre compte ont étés appliqués")</script>');//an alert() in js
+			if(Auth::check()){
+				$profile = DB::table('users')->where('ID', Auth::user()->id)->get();
+				$orders = DB::table('orders')->where('ID_USERS', Auth::user()->id)->get();
+				$products = DB::table('product')->get('Name');
+			return view('profile', [
+				'orders' => $orders,
+				'profile' => $profile,
+				'number' => count($orders),
+				'products' => $products
+			]);
+			}
 		}else {
-			display();
+			if(Auth::check()){
+				$profile = DB::table('users')->where('ID', Auth::user()->id)->get();
+				$orders = DB::table('orders')->where('ID_USERS', Auth::user()->id)->get();
+				$products = DB::table('product')->get('Name');
+			return view('profile', [
+				'orders' => $orders,
+				'profile' => $profile,
+				'number' => count($orders),
+				'products' => $products
+			]);
+			}
 		}
 	}
 	

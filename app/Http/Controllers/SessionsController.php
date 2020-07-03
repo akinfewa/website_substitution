@@ -31,6 +31,10 @@ class SessionsController extends Controller
 				$unseen = true;
 			}
 			session(['unseen' => $unseen]);
+			$conversations = DB::table('conversations')->where('ID_USERS_ONE', Auth::user()->id)->get();
+			$conversations1 = DB::table('conversations')->where('ID_USERS_TWO', Auth::user()->id)->get();
+			$conversations += conversations1;
+			dump($conversations);
 			//dump(session()->get('unseen'));
 		}
 		
