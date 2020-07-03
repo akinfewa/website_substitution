@@ -8,7 +8,7 @@
     to give and access the events
     -->
 
-    <div id="register" class="animate form">
+    <div id="register" class="animate form general">
         <form method="POST" action="/register" autocomplete="on" class="border mb-5 mt-5 mr-auto ml-auto col-4">
           {{ csrf_field() }}
 

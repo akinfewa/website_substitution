@@ -101,14 +101,13 @@
             </ul>
         </div>
         </div>
-    </div>
-        <form class="form-inline" >
-                <div class="notifications_cloche">
-                    <button type="button" style="margin-right: 25px" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#modal"><i class="far fa-bell" ></i></button>
-                </div>
-                <div class="notification_rouge">
-                    <img src="img/red_dot.png" width=25% height=25% alt="Signification de notif">
-                </div>
+        <div class="notifications" >
+            <div class="notifications_cloche">
+                <button type="button" style="margin-right: 25px" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#modal"><i class="far fa-bell" ></i></button>
+            </div>
+            <div class="notification_rouge">
+                <img src="img/red_dot.png" width=25% height=25% alt="Signification de notif">
+            </div>
             <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -125,9 +124,34 @@
                     </div>
                 </div>
             </div>
-        </form>
+        </div>
+                <div class="messages">
+                    <div class="message">
+                        <button type="button" style="margin-right: 23px" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#mod"><i class="far fa-comments"></i></button>
+                    </div>
+                    <div class="message_rouge">
+                        <img src="img/red_dot.png" width=25% height=25% alt="Signification de message">
+                    </div>
+                    <div class="modal fade" id="mod" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Centre des messages</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>messages</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
     </nav>
 </header>
+
 
     <!-- Footer -->
 

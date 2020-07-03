@@ -23,6 +23,18 @@
         top: 30%;
         right: 0.5%;
     }
+
+    .message{
+        position: absolute;
+        top: 30%;
+        right: 75px;
+    }
+
+    .message_rouge{
+        position: absolute;
+        top: 55%;
+        right: 45px;
+    }
 }
 
 @media (max-width: 990px) {
@@ -47,6 +59,18 @@
         right: 41%;
         top: 2.5%;
 
+    }
+
+    .message{
+        position: fixed;
+        top: 2.75%;
+        right: 135px;
+    }
+
+    .message_rouge{
+        position: fixed;
+        top: 5%;
+        right: 100px;
     }
 
     /*.navbar-toggler-icon {*/
@@ -111,10 +135,11 @@
 
 <!-- Page welcome -->
 
-.general{
+div.general{
     font-family: bold;
     font-size:130%;
 }
+
 .generalEcriturev2{
     font-family: bold;
     font-size:90%;
