@@ -14,9 +14,14 @@
 @media (min-width: 990px) {
     .notification_rouge {
         position: absolute;
-        top: 50%;
-        right: 0.7%;
+        top: 55%;
+        right: -1%;
 
+    }
+    .notifications_cloche{
+        position: absolute;
+        top: 30%;
+        right: 0.5%;
     }
 }
 
@@ -25,12 +30,18 @@
     .notification_rouge{
        position: absolute;
        top: 57%;
-       right: 0.4%;
+       right: 5%;
     }
     .notifications_cloche{
         position: absolute;
-        top: 50%;
-        right: 0.5%;
+        top: 30%;
+        right: 8%;
+    }
+}
+
+@media (max-width: 990px) {
+    .Logo{
+        right: 8%;
     }
 }
 
