@@ -43,8 +43,6 @@ Route::get('/login', 'SessionsController@create');
 Route::post('/login', 'SessionsController@store');
 Route::get('/logout', 'SessionsController@destroy');
 
-Route::get('sendmail','sendmail@__construct');
-
 Route::get('/apropos','PagesController@apropos');
 
 Route::post('/layoutForm', 'layoutFormController@receiveData');
