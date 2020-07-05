@@ -115,60 +115,103 @@
 					<div class="notification_rouge">
 						<img src="img/red_dot.png" width=25% height=25% alt="Signification de notif">
 					</div>
-		<?php	}
-			}
+				<?php	
+				}
 			?>
-            <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Centre de notification</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
-                        </div>
-                        <div class="modal-body">
-							<?php
-								for($i=0; $i<session()->get('notifications_count'); $i++){
-									if(session()->get('notifications')[$i]->seen == 0){
-										echo('<B>');
+				<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Centre de notification</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+							</div>
+							<div class="modal-body">
+								<?php
+									for($i=0; $i<session()->get('notifications_count'); $i++){
+										if(session()->get('notifications')[$i]->seen == 0){
+											echo('<B>');
+										}
+										echo('<a href="/myProfile?a='.session()->get('notifications')[$i]->ID.'"><p> '.session()->get('notifications')[$i]->text.' </p></a>');
+										if(session()->get('notifications')[$i]->seen == 0){
+											echo('</B>');
+										}
 									}
-									echo('<a href="/myProfile?a='.session()->get('notifications')[$i]->ID.'"><p> '.session()->get('notifications')[$i]->text.' </p></a>');
-									if(session()->get('notifications')[$i]->seen == 0){
-										echo('</B>');
-									}
-								}
-							?>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+								?>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			<?php	
+			}
+		?>
         </div>
-                <div class="messages">
-                    <div class="message">
-                        <button type="button" style="margin-right: 23px" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#mod"><i class="far fa-comments"></i></button>
-                    </div>
-                    <div class="message_rouge">
-                        <img src="img/red_dot.png" width=25% height=25% alt="Signification de message">
-                    </div>
-                    <div class="modal fade" id="mod" tabindex="-1" role="dialog" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">Centre des messages</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
-                                </div>
-                                <div class="modal-body">
-                                    <p>messages</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+		<div class="messages">
+			<?php
+			if(Auth::check()){ ?>
+				<div class="message">
+					<button type="button" style="margin-right: 23px" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#mod"><i class="far fa-comments"></i></button>
+				</div>
+				<?php
+				if(session()->get('unseen_messages') == true){ ?>
+					<div class="message_rouge">
+						<img src="img/red_dot.png" width=25% height=25% alt="Signification de message">
+					</div>
+				<?php	
+				}
+			?>
+				<div class="modal fade" id="mod" tabindex="-1" role="dialog" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Centre des messages</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+							</div>
+							<div class="modal-body">
+								<?php
+									for($i=0; $i<session()->get('conversations_count'); $i++){
+										if(session()->get('conversations')[$i]->ID_USERS_ONE == Auth::user()->id){
+											$interlocutor = session()->get('conversations')[$i]->ID_USERS_TWO;
+										}else{
+											$interlocutor = session()->get('conversations')[$i]->ID_USERS_ONE;
+										}
+										$interlocutor = DB::table('users')->where('id', $interlocutor)->get();
+										echo('<p>'.$interlocutor[0]->name.' '.$interlocutor[0]->first_name.'</p>');
+										if(session()->get('conversations')[$i]->seen == 0 && session()->get('messages')[$i][count(session()->get('messages')[$i])-1]->ID_SENDER != Auth::user()->id){
+											echo('<B>');
+										}
+										echo('<p>');
+										if(session()->get('messages')[$i][count(session()->get('messages')[$i])-1]->ID_SENDER == Auth::user()->id){
+											echo('Vous : ');
+										}
+										echo(session()->get('messages')[$i][count(session()->get('messages')[$i])-1]->text.'</p>');
+										//echo('<a href="/myProfile?a='.session()->get('notifications')[$i]->ID.'"><p> '.session()->get('notifications')[$i]->text.' </p></a>');
+										if(session()->get('conversations')[$i]->seen == 0 && session()->get('messages')[$i][count(session()->get('messages')[$i])-1]->ID_SENDER != Auth::user()->id){
+											echo('</B>');
+										}?>
+										<form action="layoutForm" method="post">
+											{{csrf_field()}} <?php
+											echo('<input type="hidden" name="conversationID" value="'.session()->get('conversations')[$i]->ID.'">
+											<input type="text" name="message" placeholder="votre message">
+											<input type="submit" value"Envoyer">
+										</form>
+										</br>
+										</br>');
+									}
+								?>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			<?php	
+			}
+		?>
+		</div>
     </nav>
 </header>
 

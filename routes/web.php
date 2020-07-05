@@ -47,4 +47,6 @@ Route::get('sendbasicemail','MailController@basic_email');
 
 Route::get('/apropos','PagesController@apropos');
 
+Route::post('/layoutForm', 'layoutFormController@receiveData');
+
 //Route::get('/accueil','PagesController@accueil');

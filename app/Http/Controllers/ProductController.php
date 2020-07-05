@@ -24,7 +24,7 @@ class ProductController extends Controller
 			$product = DB::table('product')->where('ID', request('ID'))->get('Name');
 			DB::table('product')->where('ID', request('ID'))->update(['ProdCapacity' => (($quantity[0]->ProdCapacity)-request('Quantity'))]);
 			$users = DB::table('users')->get();
-			$message = ('L\'utilisateur '.Auth::user()->name.' '.Auth::user()->first_name.' a passer une commande de '.request('Quantity').' '.$product[0]);
+			$message = ('L\'utilisateur '.Auth::user()->name.' '.Auth::user()->first_name.' a passer une commande de '.request('Quantity').' '.$product[0]->Name);
 			for($i = 0; $i< count($users);$i++){
 				if($users[$i]->Fabman == 1){
 					DB::table('notifications')->insert([
