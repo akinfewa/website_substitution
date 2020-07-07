@@ -47,6 +47,8 @@ Route::get('sendmail','sendmail@__construct');
 
 Route::get('/apropos','PagesController@apropos');
 
+Route::get('/messages','MessagesController@display');
+
 Route::post('/layoutForm', 'layoutFormController@receiveData');
 
 //Route::get('/accueil','PagesController@accueil');
