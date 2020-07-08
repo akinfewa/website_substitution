@@ -21,6 +21,14 @@ class MessagesController extends Controller
 			'ID_SENDER' => Auth::user()->id,
 			'text' => request('message'),
 		]);
+		$conversation = DB::table('conversation')->where('ID', request('conversationID'))->get();
+		if($conversation[0]->ID_USERS_ONE == Auth::user()->id){
+			$receiver = DB::table('users')->where('id', $conversation[0]->ID_USERS_TWO)->get();
+		}else {
+			$receiver = DB::table('users')->where('id', $conversation[0]->ID_USERS_ONE)->get();
+		}
+		$mail = new MailController();
+		$mail->messagesEmail($receiver[0]->email,strtoupper($receiver[0]->name).' '.ucfirst(strtolower($receiver[0]->first_name)), "validation" );
 		$conversations = DB::table('conversation')->where('ID_USERS_ONE', Auth::user()->id);
 		$conversations = DB::table('conversation')->where('ID_USERS_TWO', Auth::user()->id)->union($conversations)->get();
 		session(['conversations' => $conversations]);

@@ -13,23 +13,21 @@ class MailController extends Controller{
 
   private $tbCTX = [
           "validation"=>["Objet"=>"Confirmation de commande", "Contenu"=>"Bonjour, vous venez de commander une visière"],
-          "annulation"=>["Objet"=>"Annulation de commande", "Contenu"=>"<h1>Bonjour</h1><br>Vous avez plus une visière"],
+          "messages"=>["Objet"=>"nouveau message", "Contenu"=>"<h1>Bonjour</h1><br>Vous avez plus une visière"],
   ];
 
 public function basic_email($mailDestinataire, $userName, $contexte) {
-    $data = array("body" => $this->tbCTX[$contexte]['Contenu']);
-    try{
-        Mail::send('mail', $data, function($message) use ($mailDestinataire, $userName, $contexte) {
-          $message->to($mailDestinataire, $userName)
-		  ->subject($this->tbCTX[$contexte]['Objet']);
-          $message->from('assovisieres.cesi@gmail.com','Associations visières - étudiants CESI Lyon');
-    });
-    } catch (Exception $e){
-        echo $e;
+		$data = array("body" => $this->tbCTX[$contexte]['Contenu']);
+		try{
+			Mail::send('mail', $data, function($message) use ($mailDestinataire, $userName, $contexte) {
+			  $message->to($mailDestinataire, $userName)
+			  ->subject($this->tbCTX[$contexte]['Objet']);
+			  $message->from('assovisieres.cesi@gmail.com','Associations visières - étudiants CESI Lyon');
+		});
+		} catch (Exception $e){
+			echo $e;
+		}
     }
-    return redirect()->to('/');
-    }
-
 
 	public function fabEmail($product, $quantity) {
 		$fabmanagers = DB::table('users')->where('Fabman', 1)->get();
@@ -47,6 +45,20 @@ public function basic_email($mailDestinataire, $userName, $contexte) {
 				echo $e;
 			}
 		}
-		return redirect()->to('/');
+    }
+
+	public function messagesEmail($mailDestinataire, $userName) {
+		$message = 'L\'utilisateur '.Auth::user()->name.' '.Auth::user()->first_name.' vous a envoyé un nouveau message.';
+		$data = array("body" => $message);
+		try{
+			Mail::send('mail', $data, function($message) use ($mailDestinataire, $userName) {
+			  $message->to($mailDestinataire, $userName)
+			  ->subject("Nouveau message");
+			  $message->from('assovisieres.cesi@gmail.com','Associations visières - étudiants CESI Lyon');
+		});
+		} catch (Exception $e){
+			echo $e;
+		}
+		//return redirect()->to('/login');
     }
 }
