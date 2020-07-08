@@ -15,12 +15,12 @@ class MailController extends Controller{
   ];
 
 public function basic_email($mailDestinataire, $userName, $contexte) {
-    $data = array('name'=>"Zaroax");
+    $data = array('name'=>"Zaroax", "body" => $this->tbCTX[$contexte]['Contenu']);
 
     try{
-        Mail::send($this->tbCTX[$contexte]['Contenu'], $data, function($message) {
-          $message->to($mailDestinataire, $userName)->subject
-          ($this->tbCTX[$contexte]['Objet']);
+        Mail::send('mail', $data, function($message) use ($mailDestinataire, $userName, $contexte) {
+          $message->to($mailDestinataire, $userName)
+		  ->subject($this->tbCTX[$contexte]['Objet']);
           $message->from('assovisieres.cesi@gmail.com','Associations visières - étudiants CESI Lyon');
     });
     } catch (Exception $e){

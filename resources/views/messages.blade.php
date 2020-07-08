@@ -17,19 +17,16 @@
 				echo(session()->get('messages')[$i][$j]->text.'</br>');
 			}
 			?> 
-			</br>
-			</br>
-			</br>
-			<?php
-			/*?>
-			<form action="layoutForm" method="post">
+			<form method="post">
 				{{csrf_field()}} <?php
 				echo('<input type="hidden" name="conversationID" value="'.session()->get('conversations')[$i]->ID.'">
 				<input type="text" name="message" placeholder="votre message">
 				<input type="submit" value"Envoyer">
-			</form>
+			</form>');?>
 			</br>
-			</br>')*/;
+			</br>
+			</br>
+			<?php
 		}
 	?>
 

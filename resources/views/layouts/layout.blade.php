@@ -201,6 +201,7 @@
 										</br>');
 									}
 								?>
+								<a class="nav-link" href="/messages">Voir tous vos messages</a>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>

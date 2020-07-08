@@ -46,6 +46,7 @@ Route::get('/logout', 'SessionsController@destroy');
 Route::get('/apropos','PagesController@apropos');
 
 Route::get('/messages','MessagesController@display');
+Route::post('/messages','MessagesController@receiveData');
 
 Route::post('/layoutForm', 'layoutFormController@receiveData');
 
