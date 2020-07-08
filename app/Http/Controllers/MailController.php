@@ -28,24 +28,24 @@ public function basic_email($mailDestinataire, $userName, $contexte) {
     }
     return redirect()->to('/');
     }
-}
 
-public function fabEmail($product, $quantity) {
-	$fabmanagers = DB::table('users')->where(Fabman, 1)->get();
-	$message = 'L\'utilisateur '.Auth::user()->name.' '.Auth::user()->first_name.' a passé une nouvelle commande.';
-	$message2 = 'Cette commande est constituée de '.$quantity.' '.$product.'.';
-    $data = array("body" => $message, "body2" => $message2);
-	for($i = 0; $i<count($fabmanagers);$i++){
-		try{
-			Mail::send('mailFabmanager', $data, function($message) use ($fabmanagers, $i) {
-			  $message->to($fabmanagers[$i]->email, $fabmanagers[$i]->name)
-			  ->subject("Nouvelle commande");
-			  $message->from('assovisieres.cesi@gmail.com','Associations visières - étudiants CESI Lyon');
-		});
-		} catch (Exception $e){
-			echo $e;
+
+	public function fabEmail($product, $quantity) {
+		$fabmanagers = DB::table('users')->where(Fabman, 1)->get();
+		$message = 'L\'utilisateur '.Auth::user()->name.' '.Auth::user()->first_name.' a passé une nouvelle commande.';
+		$message2 = 'Cette commande est constituée de '.$quantity.' '.$product.'.';
+		$data = array("body" => $message, "body2" => $message2);
+		for($i = 0; $i<count($fabmanagers);$i++){
+			try{
+				Mail::send('mailFabmanager', $data, function($message) use ($fabmanagers, $i) {
+				  $message->to($fabmanagers[$i]->email, $fabmanagers[$i]->name)
+				  ->subject("Nouvelle commande");
+				  $message->from('assovisieres.cesi@gmail.com','Associations visières - étudiants CESI Lyon');
+			});
+			} catch (Exception $e){
+				echo $e;
+			}
 		}
-	}
-    return redirect()->to('/');
+		return redirect()->to('/');
     }
 }
