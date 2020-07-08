@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Mail;
 use App\Http\Requests;
+use DB;
 
 class MailController extends Controller{
 
@@ -16,7 +17,6 @@ class MailController extends Controller{
 
 public function basic_email($mailDestinataire, $userName, $contexte) {
     $data = array("body" => $this->tbCTX[$contexte]['Contenu']);
-
     try{
         Mail::send('mail', $data, function($message) use ($mailDestinataire, $userName, $contexte) {
           $message->to($mailDestinataire, $userName)
@@ -27,5 +27,25 @@ public function basic_email($mailDestinataire, $userName, $contexte) {
         echo $e;
     }
     return redirect()->to('/');
-     }
+    }
+}
+
+public function fabEmail($product, $quantity) {
+	$fabmanagers = DB::table('users')->where(Fabman, 1)->get();
+	$message = 'L\'utilisateur '.Auth::user()->name.' '.Auth::user()->first_name.' a passé une nouvelle commande.';
+	$message2 = 'Cette commande est constituée de '.$quantity.' '.$product.'.';
+    $data = array("body" => $message, "body2" => $message2);
+	for($i = 0; $i<count($fabmanagers);$i++){
+		try{
+			Mail::send('mailFabmanager', $data, function($message) use ($fabmanagers, $i) {
+			  $message->to($fabmanagers[$i]->email, $fabmanagers[$i]->name)
+			  ->subject("Nouvelle commande");
+			  $message->from('assovisieres.cesi@gmail.com','Associations visières - étudiants CESI Lyon');
+		});
+		} catch (Exception $e){
+			echo $e;
+		}
+	}
+    return redirect()->to('/');
+    }
 }
