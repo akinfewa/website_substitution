@@ -7,11 +7,11 @@
 @section('contenu')
     <!-- Head -->
     <!-- Image Top -->
-    <img class="image_contact" src="img/contact.png" width="2160" height="600" alt="Information Contact CESI">
+    <img class="image_contact" src="img/contact.png" width=100% height=80% alt="Information Contact CESI">
+    <br/>
     <br>
-    <br>
-    <br>
-    <br>
+    <br/>
+    <br/>
     <!-- Information in card-->
     <div class="container" align="center">
         <div class="row justify-content">
@@ -54,9 +54,9 @@
         </div>
     </div>
 
-    <br>
-    <br>
-    <br>
-    <br>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
 
 @endsection

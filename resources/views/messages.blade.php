@@ -19,7 +19,7 @@
         <?php
 			for($j = 0; $j<count(session()->get('messages')[$i]); $j++){
 				if(session()->get('messages')[$i][$j]->ID_SENDER == Auth::user()->id){
-					echo('Vous : ');//côté droit
+					echo('<p class="text-right">'.'Vous : ');//côté droit
 				}else {
 					//côté gauche
 				}
@@ -33,8 +33,8 @@
                 <?php
 				echo('<input type="hidden" name="conversationID" value="'.session()->get('conversations')[$i]->ID.'">
 				<input type="hidden" name="whoRU" value="started">
-				<input type="text" class="text-center" name="message" placeholder="Votre message">
-				<input type="submit" value"Envoyer"></form>'.'</br>');
+				<input type="text" class="text-center" required="required" name="message" placeholder="Votre message">
+				<input type="submit" required="required" value"Envoyer"></form>'.'</br>');
 				?>
 			</br>
 			</br>
@@ -50,11 +50,11 @@
 	<form method="post">
 	{{csrf_field()}}
 		<input type="hidden" name="whoRU" value="starting">
-		Email de votre interlocuteur : <input type="email" name="email" placeholder="exemple@gmail.com"></br>
-		Votre message : <input type="text" name="text" placeholder="Bonjour !"></br>
-		<input type="submit" value"Envoyer"></form>
+		Email de votre interlocuteur : <input type="email" name="email" required="required" placeholder="exemple@gmail.com"></br>
+		Votre message : <input type="text" name="text" required="required" placeholder="Bonjour !"></br>
+		<input type="submit" required="required" value"Envoyer"></form>
 	</form>
-	
+
 </br>
 </br>
 @endsection
