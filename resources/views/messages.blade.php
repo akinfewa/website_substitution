@@ -1,6 +1,6 @@
 @extends ('layouts.layout')
 
-    <!-- View messages -->
+    <!-- View message -->
 @section('contenu')
     </br>
     </br>
