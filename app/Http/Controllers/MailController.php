@@ -19,9 +19,9 @@ public function basic_email($mailDestinataire, $userName, $product, $quantity) {
 		$message = 'vous venez de commander une visière'.$quantity.' '.$product.'.';
 		$data = array("body" => $message);
 		try{
-			Mail::send('mail', $data, function($message) use ($mailDestinataire, $userName, $contexte) {
+			Mail::send('mail', $data, function($message) use ($mailDestinataire, $userName) {
 			  $message->to($mailDestinataire, $userName)
-			  ->subject($this->tbCTX[$contexte]['Objet']);
+			  ->subject("Confirmation de commande");
 			  $message->from('assovisieres.cesi@gmail.com','Associations visières - étudiants CESI Lyon');
 		});
 		} catch (Exception $e){
