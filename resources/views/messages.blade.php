@@ -22,8 +22,9 @@
 					echo('<p class="text-right">'.'Vous : ');//côté droit
 				}else {
 					//côté gauche
+                    echo('<p class="text-left">');//côté droit
 				}
-				echo(session()->get('messages')[$i][$j]->text.'</br>'.'<hr width="60%" color="black" style="border-width: 3px;">');
+				echo(session()->get('messages')[$i][$j]->text.'</br>'.'<hr width="100%" color="black" style="border-width: 1px;">');
 			}
 			?>
         <br/>
