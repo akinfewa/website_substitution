@@ -19,7 +19,9 @@
         <?php
 			for($j = 0; $j<count(session()->get('messages')[$i]); $j++){
 				if(session()->get('messages')[$i][$j]->ID_SENDER == Auth::user()->id){
-					echo('Vous : ');
+					echo('Vous : ');//côté droit
+				}else {
+					//côté gauche
 				}
 				echo(session()->get('messages')[$i][$j]->text.'</br>'.'<hr width="60%" color="black" style="border-width: 3px;">');
 			}
