@@ -38,21 +38,25 @@
 
 
                             <!-- Add button -->
-                                <?php if($product[$i]->ProdCapacity>0){ ?>
-                                    <form class="card-footer"  method="POST">
-                                        {{csrf_field()}}
-                                        <small class="text-muted">
-                                            <p class="general">Le maximum actuellement est égal à : <?php echo($product[$i]->ProdCapacity) ?></p>
-                                            <input type="hidden" name="ID" value=" <?php echo($product[$i]->ID) ?> ">
-                                            <input type="number" name="Quantity" min="1" max="<?php echo($product[$i]->ProdCapacity) ?>" value="0" class="col-sm-8 text-center">
-                                        </br>
-                                            </br>
-                                            <button type="submit" class="btn btn-outline-dark form-control">Commander</button>
-                                        </small>
-                                    </form>
-                                <?php }else { ?>
-                                    <p class="generalEcriture"> Nous nous excusons, mais nous sommes actuellement dans l'incapacité d'assurer la production de <?php echo($product[$i]->Name) ?></p>
-                                <?php } ?>
+								<?php if(Auth::check()){ ?>
+									<?php if($product[$i]->ProdCapacity>0){ ?>
+										<form class="card-footer"  method="POST">
+											{{csrf_field()}}
+											<small class="text-muted">
+												<p class="general">Le maximum actuellement est égal à : <?php echo($product[$i]->ProdCapacity) ?></p>
+												<input type="hidden" name="ID" value=" <?php echo($product[$i]->ID) ?> ">
+												<input type="number" name="Quantity" min="1" max="<?php echo($product[$i]->ProdCapacity) ?>" value="0" class="col-sm-8 text-center" required>
+											</br>
+												</br>
+												<button type="submit" class="btn btn-outline-dark form-control">Commander</button>
+											</small>
+										</form>
+									<?php }else { ?>
+										<p class="generalEcriture"> Nous nous excusons, mais nous sommes actuellement dans l'incapacité d'assurer la production de <?php echo($product[$i]->Name) ?></p>
+							<?php 	}
+								}else { ?>
+									<p class="generalEcriture"> Vous devez être connecter pour pouvoir passe une commande</p>
+						<?php	} ?>
                         </div>
                     </div><?php
                 } ?>

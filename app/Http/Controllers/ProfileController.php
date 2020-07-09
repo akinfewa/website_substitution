@@ -65,24 +65,24 @@ class ProfileController extends Controller{
 				$profile = DB::table('users')->where('ID', Auth::user()->id)->get();
 				$orders = DB::table('orders')->where('ID_USERS', Auth::user()->id)->get();
 				$products = DB::table('product')->get('Name');
-			return view('profile', [
-				'orders' => $orders,
-				'profile' => $profile,
-				'number' => count($orders),
-				'products' => $products
-			]);
+				return view('profile', [
+					'orders' => $orders,
+					'profile' => $profile,
+					'number' => count($orders),
+					'products' => $products
+				]);
 			}
 		}else {
 			if(Auth::check()){
 				$profile = DB::table('users')->where('ID', Auth::user()->id)->get();
 				$orders = DB::table('orders')->where('ID_USERS', Auth::user()->id)->get();
 				$products = DB::table('product')->get('Name');
-			return view('profile', [
-				'orders' => $orders,
-				'profile' => $profile,
-				'number' => count($orders),
-				'products' => $products
-			]);
+				return view('profile', [
+					'orders' => $orders,
+					'profile' => $profile,
+					'number' => count($orders),
+					'products' => $products
+				]);
 			}
 		}
 	}
@@ -97,7 +97,7 @@ class ProfileController extends Controller{
 	
 	public function modifying(){
         if (auth()->attempt(request(['email', 'password'])) == true) {
-			if(request('hidden') == "password"){
+			if(request('whichOne') == "password"){
 				DB::table('users')->where('id', Auth::user()->id)->update(['password' => bcrypt(request(['newPassword'][0]))]);
 			}else {
 				DB::table('users')->where('id', Auth::user()->id)->update(['email' => request(['newEMail'][0])]);

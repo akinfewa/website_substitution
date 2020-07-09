@@ -127,11 +127,15 @@
 							</div>
 							<div class="modal-body">
 								<?php
-									for($i=0; $i<session()->get('notifications_count'); $i++){
+									for($i=session()->get('notifications_count')-1; $i>=0; $i--){
 										if(session()->get('notifications')[$i]->seen == 0){
 											echo('<B>');
 										}
-										echo('<a href="/myProfile?a='.session()->get('notifications')[$i]->ID.'"><p> '.session()->get('notifications')[$i]->text.' </p></a>');
+										if(session()->get('notifications')[$i]->FabNotif == 1){
+											echo('<a href="/FabPage?a='.session()->get('notifications')[$i]->ID.'"><p> '.session()->get('notifications')[$i]->text.' </p></a>');
+										}else {	
+											echo('<a href="/myProfile?a='.session()->get('notifications')[$i]->ID.'"><p> '.session()->get('notifications')[$i]->text.' </p></a>');
+										}
 										if(session()->get('notifications')[$i]->seen == 0){
 											echo('</B>');
 										}
@@ -194,7 +198,7 @@
 										<form action="layoutForm" method="post">
 											{{csrf_field()}} <?php
 											echo('<input type="hidden" name="conversationID" value="'.session()->get('conversations')[$i]->ID.'">
-											<input type="text" name="message" placeholder="votre message">
+											<input type="text" name="message" placeholder="votre message" required>
 											<input type="submit" value"Envoyer">
 										</form>
 										</br>

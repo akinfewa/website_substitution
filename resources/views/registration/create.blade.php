@@ -20,28 +20,28 @@
             <!-- Information -->
             <div class="form-group">
                 <label for "name">Nom : </label>
-                <input name="name" required="required" placeholder="Dujardin" type="text" value="" class="form-control"/>
+                <input name="name" required="required" placeholder="Dujardin" type="text" value="" class="form-control" required/>
             </div>
 
             <div class="form-group">
                 <label for "first_name">Prénom : </label>
-                <input name="first_name" required="required" placeholder="Jean" type="text" value="" class="form-control"/>
+                <input name="first_name" required="required" placeholder="Jean" type="text" value="" class="form-control" required/>
             </div>
             <div class="form-group">
                 <label for "company">Entreprise : </label>
-                <input name="company" required="required" type="text" placeholder="Corporation" value="" class="form-control"/>
+                <input name="company" required="required" type="text" placeholder="Corporation" value="" class="form-control" required/>
             </div>
             <div class="form-group">
                 <label for"email">Adresse Mail : </label>
-                <input name="email" required="required" type="email" placeholder="exemple@gmail.com" value="" class="form-control"/>
+                <input name="email" required="required" type="email" placeholder="exemple@gmail.com" value="" class="form-control" required/>
             </div>
             <div class="form-group">
                 <label for"password">Mot de passe : </label>
-                <input name="password" required="required" type="password" placeholder="Mot de passe" class="form-control"/>
+                <input name="password" required="required" type="password" placeholder="Mot de passe" class="form-control" required/>
             </div>
             <div class="form-group">
                 <label for="password_confirmation">Confirmation du mot de passe</label>
-                <input name="password_confirmation" required="required" type="password" id="password_confirmation" placeholder="Mot de passe (Confirmation)" class="form-control"/>
+                <input name="password_confirmation" required="required" type="password" id="password_confirmation" placeholder="Mot de passe (Confirmation)" class="form-control" required/>
             </div>
             <!-- termes -->
             <div class="custom-control custom-checkbox">

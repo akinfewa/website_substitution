@@ -26,13 +26,13 @@
                 <br>
                 <label for="email" class="uname" data-icon="u"> Adresse mail : </label>
                 <input id="email" name="email" class="form-control" required="required" value="" type="email"
-                       placeholder="cesiLyon@viacesi.fr"/>
+                       placeholder="cesiLyon@viacesi.fr" required/>
             </div>
               <br>
             <div class="form-group">
                 <label for="password" class="youpasswd" data-icon="p"> Mot de passe : </label>
                 <input id="password" name="password" class="form-control" required="required" type="password"
-                       placeholder="CesiMDP123"/>
+                       placeholder="CesiMDP123" required/>
             </div>
               <br>
         <!-- submit button -->

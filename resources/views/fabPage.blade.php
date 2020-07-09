@@ -59,7 +59,7 @@
 				{{csrf_field()}}
 				<?php
 				echo ('<input type="hidden" name="ID" value="'.$orders[$i]->ID.'" />');
-				echo ('<input type="hidden" name="whichOne" value="orders" />');?>
+				echo ('<input type="hidden" name="whichOne" value="orders"/>');?>
 
             <div class="general text-center">
                     <br/>
@@ -115,7 +115,7 @@
             <div>
                 <br/>
 				<?php
-				echo ('<input type="number" name="'.$products[$i]->ID.'" value="'.$products[$i]->ProdCapacity.'" />');?>
+				echo ('<input type="number" name="'.$products[$i]->ID.'" value="'.$products[$i]->ProdCapacity.'" required/>');?>
             </div>
 
             <br/>

@@ -12,7 +12,25 @@ class FabPageController extends Controller
 		$number = count($orders);
 		$product = DB::table('product')->get();
 		$users = DB::table('users')->get();
-		if(Auth::user()->Fabman == 1){
+		if(Auth::check() && Auth::user()->Fabman == 1){
+			if(isset($_GET['a']) && $_GET['a']>=1){
+				$allNotifications = DB::table('notifications')->get();
+				$allNotificationsNumber = count($allNotifications);
+				if($_GET['a']<=$allNotificationsNumber){
+					if($allNotifications[$_GET['a']-1]->ID_USERS == Auth::user()->id){
+						DB::table('notifications')->where('ID', $_GET['a'])->update(['seen' => 1]);
+						$notifications = DB::table('notifications')->where('ID_USERS', Auth::user()->id)->get();
+						session(['notifications' => $notifications]);
+						session(['notifications_count' => count($notifications)]);
+						$notifications = DB::table('notifications')->where('ID_USERS', Auth::user()->id)->where('seen', 0)->get();
+						$unseen = false;
+						if(count($notifications)>0){
+							$unseen = true;
+						}
+						session(['unseen' => $unseen]);
+					}
+				}
+			}
 			return view('fabPage', [
 				'orders' => $orders,
 				'number' => $number,
@@ -26,6 +44,7 @@ class FabPageController extends Controller
 		}
 	}
 	public function receiveData(){
+		$notificationNumber = count(DB::table('notifications')->get())+1;
 		if(request('whichOne') == "orders"){
 			if(request('nextStep') == "yes"){
 				$newShippingState = DB::table('orders')->where('ID', request('ID'))->get('ShippingState');
@@ -43,9 +62,11 @@ class FabPageController extends Controller
 				}
 				DB::table('orders')->where('ID', request('ID'))->update(['ShippingState' => $newShippingState[0]->ShippingState+1]);
 				DB::table('notifications')->insert([
+					'ID' => $notificationNumber,
 					'ID_USERS' => Auth::user()->id,
 					'text' => $message,
-					'seen' => 0
+					'seen' => 0,
+					'FabNotif' => 0,
 				]);
 				echo('<script>alert("Nous avons bien pris en compte l\'actualisation de l\'état de la commande")</script>');//an alert() in js
 				$orders = DB::table('orders')->get();
@@ -75,9 +96,11 @@ class FabPageController extends Controller
 				}
 				DB::table('orders')->where('ID', request('ID'))->update(['ShippingState' => $newShippingState[0]->ShippingState-1]);
 				DB::table('notifications')->insert([
+					'ID' => $notificationNumber,
 					'ID_USERS' => Auth::user()->id,
 					'text' => $message,
-					'seen' => 0
+					'seen' => 0,
+					'FabNotif' => 0,
 				]);
 				echo('<script>alert("Nous avons bien pris en compte l\'actualisation de l\'état de la commande")</script>');//an alert() in js
 				$orders = DB::table('orders')->get();

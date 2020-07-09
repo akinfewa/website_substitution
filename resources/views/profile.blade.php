@@ -29,7 +29,7 @@
 
 				Votre nom est <em>
 				<?php
-					echo('<input type="text" name="name" value="'.$profile[0]->name.'"/>');
+					echo('<input type="text" name="name" value="'.$profile[0]->name.'"/ required>');
 				?>
 				</em>
 				</br>
@@ -40,7 +40,7 @@
 
 				Votre prénom est <em>
 				<?php
-					echo('<input type="text" name="first_name" value="'.$profile[0]->first_name.'"/>');
+					echo('<input type="text" name="first_name" value="'.$profile[0]->first_name.'" required/>');
 				?></em>
 				</br>
 
@@ -50,7 +50,7 @@
 
 				Votre entreprise est <em>
 				<?php
-					echo('<input type="text" name="company" value="'.$profile[0]->company.'"/>');
+					echo('<input type="text" name="company" value="'.$profile[0]->company.'" required/>');
 				?> </em>
 				</br>
 				</br>

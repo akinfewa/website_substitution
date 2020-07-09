@@ -20,9 +20,9 @@
         <form method ="post">
         {{csrf_field()}}
         <input type="hidden" name="whichOne" value="password"/>
-        <input type="email" name="email" placeholder="Adresse e-mail"/>
-        <input type="password" name="password" placeholder="Ancien mot de passe"/>
-        <input type="password" name="newPassword" placeholder="Nouveau mot de passe"/>
+        <input type="email" name="email" placeholder="Adresse e-mail" required/>
+        <input type="password" name="password" placeholder="Ancien mot de passe" required/>
+        <input type="password" name="newPassword" placeholder="Nouveau mot de passe" required/>
         <input type="submit" value="Modifier"/>
         </form>
         <br/>
@@ -36,10 +36,10 @@
         </p>
         <form method ="post">
             {{csrf_field()}}
-            <input type="hidden" name="whichOne" value="email"/>
-            <input type="email" name="email" placeholder="Ancienne adresse e-mail"/>
-            <input type="password" name="password" placeholder="votre mot de passe"/>
-            <input type="email" name="newEMail" placeholder="Nouvelle e-mail"/>
+            <input type="hidden" name="whichOne" value="email" required/>
+            <input type="email" name="email" placeholder="Ancienne adresse e-mail" required/>
+            <input type="password" name="password" placeholder="votre mot de passe" required/>
+            <input type="email" name="newEMail" placeholder="Nouvelle e-mail" required/>
             <input type="submit" value="Modifier"/>
         </form>
         <br/>
