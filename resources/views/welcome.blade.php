@@ -95,7 +95,7 @@
 
     <div class="text-center general">
         <p class="text-center"><b>Vous êtes pret à l'utilisation en vous souhaitant la</b></p>
-        <img src="img/bienvenue.jpg" width=65% height=100%>
+        <img src="img/bienvenue.jpg" width=65% height=400px>
     </div>
 
     @endsection

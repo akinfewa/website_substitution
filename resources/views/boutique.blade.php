@@ -21,7 +21,7 @@
                 <!-- Information -->
                     <div>
                         <div class="card text-center">
-                            <img class="card-img-top border-bottom-2" src=" <?php echo($product[$i]->picture); ?>" alt="Card image cap">
+                            <img class="card-img-top border-bottom-2" src=" <?php echo($product[$i]->picture); ?>" alt="Image de Visières">
 
                             <div class="card-body">
                                 <h4 class="card-title"><?php echo($product[$i]->Name) ?> </h4>
@@ -51,7 +51,7 @@
                                         </small>
                                     </form>
                                 <?php }else { ?>
-                                    <p class="general"> Nous nous excusons, mais nous sommes actuellement dans l'incapacité de d'assurer la production de <?php echo($product[$i]->Name) ?></p>
+                                    <p class="generalEcriture"> Nous nous excusons, mais nous sommes actuellement dans l'incapacité d'assurer la production de <?php echo($product[$i]->Name) ?></p>
                                 <?php } ?>
                         </div>
                     </div><?php

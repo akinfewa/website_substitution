@@ -14,7 +14,10 @@
         <br>
         <!-- title -->
         <h5 id="connection" align="center" class="titre">Connexion</h5>
-        <form method="POST" action="/login" autocomplete="on" class="border mb-5 mt-5 mr-auto ml-auto col-4">
+        <br>
+        <br>
+        <br>
+        <form method="POST" action="/login" autocomplete="on" class="border mb-8 mt-8 mr-auto ml-auto col-7">
           {{ csrf_field() }}
         <!-- Information -->
             <div class="form-group mt-3">
