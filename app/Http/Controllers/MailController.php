@@ -15,7 +15,7 @@ class MailController extends Controller{
           "validation"=>["Objet"=>"Confirmation de commande", "Contenu"=>"Bonjour, vous venez de commander une visière"],
   ];
 
-public function basic_email($mailDestinataire, $userName, $quantity, $product) {
+public function basic_email($mailDestinataire, $userName, $product, $quantity) {
 		$message = 'vous venez de commander une visière'.$quantity.' '.$product.'.';
 		$data = array("body" => $message);
 		try{
