@@ -13,11 +13,11 @@ class MailController extends Controller{
 
   private $tbCTX = [
           "validation"=>["Objet"=>"Confirmation de commande", "Contenu"=>"Bonjour, vous venez de commander une visière"],
-          "messages"=>["Objet"=>"nouveau message", "Contenu"=>"<h1>Bonjour</h1><br>Vous avez plus une visière"],
   ];
 
-public function basic_email($mailDestinataire, $userName, $contexte) {
-		$data = array("body" => $this->tbCTX[$contexte]['Contenu']);
+public function basic_email($mailDestinataire, $userName, $quantity, $product) {
+		$message = 'vous venez de commander une visière'.$quantity.' '.$product.'.';
+		$data = array("body" => $message);
 		try{
 			Mail::send('mail', $data, function($message) use ($mailDestinataire, $userName, $contexte) {
 			  $message->to($mailDestinataire, $userName)
@@ -30,6 +30,7 @@ public function basic_email($mailDestinataire, $userName, $contexte) {
     }
 
 	public function fabEmail($product, $quantity) {
+		dump($quantity);
 		$fabmanagers = DB::table('users')->where('Fabman', 1)->get();
 		$message = 'L\'utilisateur '.Auth::user()->name.' '.Auth::user()->first_name.' a passé une nouvelle commande.';
 		$message2 = 'Cette commande est constituée de '.$quantity.' '.$product.'.';

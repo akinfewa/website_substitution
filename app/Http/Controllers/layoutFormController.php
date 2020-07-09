@@ -30,6 +30,7 @@ class layoutFormController extends Controller
 			$messages[$i] = DB::table('messages')->where('ID_CONVERSATION', $conversations[$i]->ID)->get();
 			if($conversations[$i]->seen == 0 && $messages[$i][count($messages[$i])-1]->ID_SENDER != Auth::user()->id){
 				$unseen = true;
+				DB::table('conversation')->where('ID', $i)->update(['seen' => 1]);
 			}
 		}
 		session(['messages' => $messages]);

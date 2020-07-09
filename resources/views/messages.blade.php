@@ -26,6 +26,9 @@
 			</br>
 			</br>
 			</br>
+			<form method="post">
+				{{csrf_field()}}
+			</form>
 			<?php
 		}
 	?>

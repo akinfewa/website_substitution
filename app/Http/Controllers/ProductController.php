@@ -24,9 +24,9 @@ class ProductController extends Controller
 			$product = DB::table('product')->where('ID', request('ID'))->get('Name');
 			DB::table('product')->where('ID', request('ID'))->update(['ProdCapacity' => (($quantity[0]->ProdCapacity)-request('Quantity'))]);
 			$mail = new MailController();
-			$mail->basic_email(Auth::user()->email,strtoupper(Auth::user()->name).' '.ucfirst(strtolower(Auth::user()->first_name)), "validation" );
+			$mail->basic_email(Auth::user()->email,strtoupper(Auth::user()->name).' '.ucfirst(strtolower(Auth::user()->first_name)), $productName[0]->Name, request('Quantity'));
 			$productName = DB::table('product')->where('ID', request('ID'))->get();
-			$mail->fabEmail($productName[0]->Name, request('quantity'));
+			$mail->fabEmail($productName[0]->Name, request('Quantity'));
 			$users = DB::table('users')->get();
 			$message = ('L\'utilisateur '.Auth::user()->name.' '.Auth::user()->first_name.' a passer une commande de '.request('Quantity').' '.$product[0]->Name);
 			for($i = 0; $i< count($users);$i++){
