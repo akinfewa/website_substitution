@@ -32,15 +32,13 @@
 				{{csrf_field()}}
                 <?php
 				echo('<input type="hidden" name="conversationID" value="'.session()->get('conversations')[$i]->ID.'">
+				<input type="hidden" name="whoRU" value="started">
 				<input type="text" class="text-center" name="message" placeholder="Votre message">
 				<input type="submit" value"Envoyer"></form>'.'</br>');
 				?>
 			</br>
 			</br>
 			</br>
-			<form method="post">
-				{{csrf_field()}}
-			</form>
 			<?php
 		}
 	?>
@@ -48,8 +46,15 @@
     </div>
     </div>
     </div>
-
-
+	<p> Souhaitez-vous entammer une discussion ? </p>
+	<form method="post">
+	{{csrf_field()}}
+		<input type="hidden" name="whoRU" value="starting">
+		Email de votre interlocuteur : <input type="email" name="email" placeholder="exemple@gmail.com"></br>
+		Votre message : <input type="text" name="text" placeholder="Bonjour !"></br>
+		<input type="submit" value"Envoyer"></form>
+	</form>
+	
 </br>
 </br>
 @endsection
