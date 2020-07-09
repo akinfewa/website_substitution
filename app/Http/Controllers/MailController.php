@@ -30,7 +30,6 @@ public function basic_email($mailDestinataire, $userName, $product, $quantity) {
     }
 
 	public function fabEmail($product, $quantity) {
-		dump($quantity);
 		$fabmanagers = DB::table('users')->where('Fabman', 1)->get();
 		$message = 'L\'utilisateur '.Auth::user()->name.' '.Auth::user()->first_name.' a passé une nouvelle commande.';
 		$message2 = 'Cette commande est constituée de '.$quantity.' '.$product.'.';
