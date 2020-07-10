@@ -44,17 +44,20 @@
 		}
 	?>
             </form>
+		</div>
     </div>
+    <div class="row">
+        <div class="border mb-6 mt-6 mr-auto ml-auto col-7 text-center" style="border: black 5px">
+			<p> Souhaitez-vous entammer une discussion ? </p></br>
+			<form method="post">
+			{{csrf_field()}}
+				<input type="hidden" name="whoRU" value="starting">
+				Email de votre interlocuteur : <input type="email" name="email" required="required" placeholder="exemple@gmail.com"></br>
+				Votre message : <input type="text" name="text" required="required" placeholder="Bonjour !"></br></br>
+				<input type="submit" required="required" value"Envoyer"></form>
+			</form>
+		</div>
     </div>
-    </div>
-	<p> Souhaitez-vous entammer une discussion ? </p>
-	<form method="post">
-	{{csrf_field()}}
-		<input type="hidden" name="whoRU" value="starting">
-		Email de votre interlocuteur : <input type="email" name="email" required="required" placeholder="exemple@gmail.com"></br>
-		Votre message : <input type="text" name="text" required="required" placeholder="Bonjour !"></br>
-		<input type="submit" required="required" value"Envoyer"></form>
-	</form>
 
 </br>
 </br>
