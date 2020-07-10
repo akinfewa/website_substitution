@@ -19,7 +19,7 @@
         <?php
 			for($j = 0; $j<count(session()->get('messages')[$i]); $j++){
 				if(session()->get('messages')[$i][$j]->ID_SENDER == Auth::user()->id){
-					echo('<p class="text-right">'.'Vous : ');//côté droit
+					echo('<p class="text-right">');//côté droit
 				}else {
 					//côté gauche
                     echo('<p class="text-left">');//côté droit

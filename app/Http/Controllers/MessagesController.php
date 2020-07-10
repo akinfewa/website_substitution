@@ -14,6 +14,7 @@ class MessagesController extends Controller
 			session(['conversations' => $conversations]);
 			session(['conversations_count' => count($conversations)]);
 			$unseen = false;
+			$messages[0] = null;
 			for($i = 0; $i<count($conversations); $i++){
 				$messages[$i] = DB::table('messages')->where('ID_CONVERSATION', $conversations[$i]->ID)->get();
 				if($conversations[$i]->seen == 0 && $messages[$i][count($messages[$i])-1]->ID_SENDER != Auth::user()->id){
