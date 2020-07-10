@@ -34,8 +34,19 @@
     <div class="back generalEcriture">
 	<?php
 		for($i=0;$i<$number;$i++){
-			$name = $users[$orders[$i]->ID_USERS-1]->name;
-			$first_name = $users[$orders[$i]->ID_USERS-1]->first_name;
+			if($orders[$i]->ID_USERS <= count($users)){
+				if($orders[$i]->ID_USERS == $users[$orders[$i]->ID_USERS-1]->id){
+					$name = $users[$orders[$i]->ID_USERS-1]->name;
+					$first_name = $users[$orders[$i]->ID_USERS-1]->first_name;
+				}else{
+					for($j=0;$j<count($users);$j++){
+						if($orders[$i]->ID_USERS == $users[$j]->id){
+							$name = $users[$j]->name;
+							$first_name = $users[$j]->first_name;
+						}
+					}
+				}
+			}
 			$product = $products[$orders[$i]->ID_Product-1]->Name;
 			$quantity = $orders[$i]->Quantity;
 			$shippingState = $orders[$i]->ShippingState;
